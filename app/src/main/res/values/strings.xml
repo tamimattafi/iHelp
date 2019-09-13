@@ -16,10 +16,14 @@
     <string name="something_went_wrong">Something went wrong! Please try again.</string>
     <string name="create_new_account">Create New Account</string>
     <string name="not_registered_yet">Not registered yet ?</string>
-    <string name="reset_password">Rest Password</string>
+    <string name="forgot_password">Forgot password?</string>
     <string name="sign_up">Sign up</string>
     <string name="username">Username</string>
     <string name="register">Register</string>
+    <string name="restore_password">Restore password</string>
+    <string name="repeat">Repeat</string>
+    <string name="new_password">New password</string>
+    <string name="done">Done</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="menu">Menu</string>
@@ -27,13 +31,18 @@
     <string name="info_item_icon">info</string>
     <string name="save">Save</string>
     <string name="description">description</string>
-    <string name="registration_error">Registration Error</string>
-    <string name="creating_user">Creating User</string>
-    <string name="please_wait">Please Wait…</string>
-    <string name="forgot_password_reset">Forgot Password? <b><u>Reset</u></b></string>
-    <string name="enter_your_account">Enter Your Account</string>
+    <string name="registration_error">Registration error</string>
+    <string name="logining_error">Logining error</string>
+    <string name="changing_password_error">Changing password error</string>
+    <string name="creating_user">Creating user</string>
+    <string name="logining_user">Logining user</string>
+    <string name="changing_password">Changing password</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="passwords_not_match">Passwords don\'t match</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="no_data">No Data</string>
+    <string name="enter_your_account">Enter Your Account</string>
+    <string name="forgot_password_reset">Forgot Password? <b><u>Reset</u></b></string>
+    <string name="reset_password">Rest Password</string>
     <string name="no_connection">No Connection</string>
     <string name="device_not_connected">Your device is not connected to the internet! Please reconnect and try again.</string>
     <string name="refresh">Refresh</string>
@@ -43,4 +52,5 @@
     <string name="volunteer">Volunteer</string>
     <string name="organization">Organization</string>
     <string name="verify">Verify</string>
+
 </resources>

@@ -13,5 +13,6 @@ interface LoginContract {
         fun getPassword(): String
         fun onLoginSuccess()
         fun showError(message : String)
+        fun setLoading()
     }
 }

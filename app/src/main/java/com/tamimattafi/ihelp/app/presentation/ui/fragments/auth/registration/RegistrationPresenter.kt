@@ -16,6 +16,7 @@ class RegistrationPresenter @Inject constructor(view: RegistrationContract.View)
     override fun onRegisterBtnPressed() {
         with(view) {
             if (isFormValid()) {
+                setLoading()
                 repository.authenticate(
                     RegistrationCredentials(
                         getUsername(),
