@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tamimattafi.ihelp.R
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.InfoDialog
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.LoadingDialog
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.utils.AppUtils
 import com.tamimattafi.ihelp.utils.FormUtils
@@ -20,6 +22,20 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     @Inject
     lateinit var presenter: RegistrationContract.Presenter
 
+    private val errorDialog by lazy {
+        InfoDialog(appContext).apply {
+            title = appContext.resources.getString(R.string.registration_error)
+        }
+    }
+
+    private val loadingDialog by lazy {
+        LoadingDialog(appContext).apply {
+            with(appContext.resources) {
+                title = getString(R.string.creating_user)
+                hint = getString(R.string.please_wait)
+            }
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         registerBtn.setOnClickListener {
@@ -28,11 +44,18 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     }
 
     override fun onRegisterSuccess() {
+        loadingDialog.dismiss()
+    }
 
+    override fun setLoading() {
+        loadingDialog.show()
     }
 
     override fun showError(message: String) {
-        AppUtils.showToast(context!!, "Error")
+        loadingDialog.dismiss()
+        errorDialog.apply {
+            hint = message
+        }.show()
     }
 
     override fun isFormValid() = FormUtils.isFormCorrect(username, usernameLayout,
@@ -44,4 +67,5 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     override fun getEmail() = email.text.toString()
 
     override fun getPassword() = password.text.toString()
+
 }

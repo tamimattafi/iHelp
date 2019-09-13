@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.presentation.custom.holders.dialog
+package com.tamimattafi.lastochka.app.ui.custom.holders.dialog
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +16,7 @@ class SimpleStringItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     }
 
     override fun bindListeners(listener: SelectionDialogContract.ListDialogActionListener<String>) {
-        itemView.setOnClickListener {
-            listener.onItemSelected(item)
-        }
+        listener.onItemSelected(item)
     }
 
 

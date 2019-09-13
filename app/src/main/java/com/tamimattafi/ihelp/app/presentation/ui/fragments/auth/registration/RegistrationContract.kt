@@ -13,5 +13,6 @@ interface RegistrationContract {
         fun getPassword(): String
         fun onRegisterSuccess()
         fun showError(message : String)
+        fun setLoading()
     }
 }
