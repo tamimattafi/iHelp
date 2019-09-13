@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">iHelp!</string>
     <string name="something_went_wrong">Something went wrong! Please try again!</string>
+    <string name="welcome_image">welcome_image</string>
 </resources>
