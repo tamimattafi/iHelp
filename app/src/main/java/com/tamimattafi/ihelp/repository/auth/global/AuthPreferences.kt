@@ -16,20 +16,20 @@ class AuthPreferences @Inject constructor(private val preferences: SharedPrefere
         apply()
     }
 
-    override fun getLoginCredentials() : LoginCredentials? = Gson().fromJson(preferences.getString(
+    override fun getLoginCredentials() : LoginCredentials = Gson().fromJson(preferences.getString(
         CREDENTIALS, null), LoginCredentials::class.java)
 
-    override fun setLoginCredentials(credentials: LoginCredentials) = with(preferences.edit()) {
+    override fun setLoginCredentials(credentials: LoginCredentials?) = with(preferences.edit()) {
         putString(CREDENTIALS, Gson().toJson(credentials))
         apply()
     }
 
-    override fun setToken(token: Token) = with(preferences.edit()) {
+    override fun setToken(token: Token?) = with(preferences.edit()) {
         putString(TOKEN, Gson().toJson(token))
         apply()
     }
 
-    override fun getToken(): Token? = Gson().fromJson(preferences.getString(TOKEN, null), Token::class.java)
+    override fun getToken(): Token = Gson().fromJson(preferences.getString(TOKEN, null), Token::class.java)
 
     companion object {
         const val LOGGED_IN = "loggedIn"

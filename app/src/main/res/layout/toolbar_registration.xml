@@ -18,7 +18,6 @@
                     android:id="@+id/back"
                     android:src="@drawable/ic_back"
                     android:tint="@color/colorGrayDark"
-                    android:contentDescription="@string/clear_sign"
                     android:background="?selectableItemBackgroundBorderless"
                     android:layout_centerVertical="true"
                     android:layout_width="48dp"

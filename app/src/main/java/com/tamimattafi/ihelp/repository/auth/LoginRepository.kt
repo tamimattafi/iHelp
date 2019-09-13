@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class LoginRepository @Inject constructor(): AuthContract.BaseAuthRepository<LoginCredentials>() {
 
-    override fun getTokenCall(credentials: LoginCredentials): Call<Token>
+    override fun getAuthCall(credentials: LoginCredentials): Call<Token>
             = interractor.login(credentials)
 
 }

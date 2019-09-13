@@ -7,7 +7,9 @@ interface BaseHomeContract {
 
     interface Presenter<HOLDER : MvpRecyclerContract.Holder> : MvpRecyclerContract.Presenter<HOLDER>
 
-    interface View : MvpRecyclerContract.Listener
+    interface View : MvpRecyclerContract.Listener {
+        fun showError(message : String)
+    }
 
 
     abstract class Adapter<HOLDER : MvpRecyclerContract.Holder>(

@@ -11,6 +11,7 @@ interface RegistrationContract {
         fun getUsername(): String
         fun getEmail(): String
         fun getPassword(): String
+        fun getType() : Boolean
         fun onRegisterSuccess()
         fun showError(message : String)
         fun setLoading()

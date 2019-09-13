@@ -1,9 +1,7 @@
 package com.tamimattafi.ihelp.app.di.modules.fragments.auth
 
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.confirmation.ConfirmationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login.LoginFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.reset.ResetFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.welcome.WelcomeFragment
 import com.tamimattafi.ihelp.interractor.auth.AuthService
 import com.tamimattafi.ihelp.repository.auth.global.AuthContract
@@ -27,13 +25,6 @@ abstract class AuthFragmentsModule {
     @ContributesAndroidInjector(modules = [WelcomeModule::class])
     abstract fun welcomeFragment() : WelcomeFragment
 
-    @ContributesAndroidInjector(modules = [ResetModule::class])
-    abstract fun resetFragment() : ResetFragment
-
-    @ContributesAndroidInjector(modules = [ConfirmationModule::class])
-    abstract fun confirmationFragment() : ConfirmationFragment
-
-
     @Module
     companion object {
         @JvmStatic
@@ -42,8 +33,5 @@ abstract class AuthFragmentsModule {
         fun provideAuthService(retrofit: Retrofit) : AuthService = retrofit.create(
             AuthService::class.java)
     }
-
-    @Binds @Reusable
-    abstract fun bindPreferences(authPreferences: AuthPreferences) : AuthContract.Preferences
 
 }

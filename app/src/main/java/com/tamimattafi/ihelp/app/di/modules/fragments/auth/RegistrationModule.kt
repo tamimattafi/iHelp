@@ -3,7 +3,7 @@ package com.tamimattafi.ihelp.app.di.modules.fragments.auth
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationContract
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationPresenter
-import com.tamimattafi.ihelp.model.auth.RegistrationCredentails
+import com.tamimattafi.ihelp.model.auth.RegistrationCredentials
 import com.tamimattafi.ihelp.repository.auth.global.AuthContract
 import com.tamimattafi.ihelp.repository.auth.RegistrationRepository
 import dagger.Binds
@@ -19,6 +19,6 @@ abstract class RegistrationModule {
     abstract fun bindView(registrationFragment: RegistrationFragment) : RegistrationContract.View
 
     @Binds
-    abstract fun bindRepository(registrationRepository: RegistrationRepository) : AuthContract.BaseAuthRepository<RegistrationCredentails>
+    abstract fun bindRepository(registrationRepository: RegistrationRepository) : AuthContract.BaseAuthRepository<RegistrationCredentials>
 
 }

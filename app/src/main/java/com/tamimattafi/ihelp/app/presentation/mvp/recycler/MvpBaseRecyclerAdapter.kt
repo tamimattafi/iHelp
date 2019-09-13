@@ -64,7 +64,7 @@ abstract class MvpBaseRecyclerAdapter<HOLDER : MvpRecyclerContract.Holder>(
     }
 
     override fun loadMore() {
-        presenter.loadMoreRecyclerData(this)
+        presenter.loadMoreRecyclerData()
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

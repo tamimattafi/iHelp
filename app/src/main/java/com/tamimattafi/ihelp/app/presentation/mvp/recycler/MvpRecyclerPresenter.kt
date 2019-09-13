@@ -12,24 +12,32 @@ abstract class MvpRecyclerPresenter<T : MvpRecyclerContract.Object<Int>,
 
     protected var dataList: ArrayList<T> = ArrayList()
 
-    override fun loadMoreRecyclerData(recycler: MvpRecyclerContract.RecyclerAdapter<HOLDER>) {
-        with(recycler as MvpRecyclerContract.InternetRecyclerAdapter<HOLDER>) {
+    override fun loadMoreRecyclerData() {
+        with(view.getAdapter()) {
             if (!allData && !isLoading && !networkError) {
-
                 isLoading = true
-
-                repository.getNextPage()
-
+                repository.getNextPage().setOnListCompleteListener {
+                    isLoading = true
+                    dataList.addAll(ArrayList(it))
+                    setDataCount(dataList.size)
+                    allData = it.size < repository.paginationSize
+                    isLoading = false
+                    view.setRefreshing(false)
+                }.setOnFailureListener {
+                    networkError = true
+                    isLoading = false
+                    setDataCount(dataList.size)
+                    view.showError(it)
+                }
             }
-
         }
     }
 
-    override fun refresh(recycler: MvpRecyclerContract.RecyclerAdapter<HOLDER>) {
+    override fun refresh() {
         dataList.clear()
         repository.refresh()
         view.setRefreshing(true)
-        loadMoreRecyclerData(recycler)
+        loadMoreRecyclerData()
     }
 
     override fun onDestroyView() {

@@ -13,7 +13,7 @@ class MainActivity : NavigationActivity() {
     override var rootId: Int = R.id.root
 
     override fun onViewCreated(savedInstanceState: Bundle?) {
-        requestAttachBaseScreen(MenuFragment())
+        requestAttachBaseScreen(LoginFragment())
     }
 
     override fun beforeViewCreated() {

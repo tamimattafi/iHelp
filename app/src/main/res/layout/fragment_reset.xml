@@ -45,46 +45,14 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
-            android:id="@+id/sendCodeBtn"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="16dp"
-            android:text="@string/send_code"
-            app:iconGravity="textStart"
-            app:icon="@drawable/ic_send"/>
-
-        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
-                style="@style/Widget.Design.TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/codeLayout"
-                app:hintTextColor="@color/colorGrayDark"
-                android:textColorHint="@color/colorGrayLight">
-            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:textColor="@color/colorGrayDark"
-                    android:id="@+id/code"
-                    android:textSize="14sp"
-                    android:background="@drawable/background_edit_text_field"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/code" />
-        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-                style="@style/MaterialButtonAccent"
-                android:id="@+id/verifyCodeBtn"
+                android:id="@+id/verify"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:padding="16dp"
-                android:enabled="false"
-                app:iconGravity="textStart"
-                app:icon="@drawable/ic_verified"
-                android:text="@string/verify_code" />
+                android:text="@string/verify"/>
+
 
     </LinearLayout>
 </ScrollView>

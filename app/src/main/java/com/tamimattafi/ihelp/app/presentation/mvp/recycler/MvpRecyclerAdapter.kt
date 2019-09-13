@@ -11,19 +11,19 @@ abstract class MvpRecyclerAdapter<HOLDER : MvpRecyclerContract.Holder>(
     override val presenter: MvpRecyclerContract.Presenter<HOLDER>,
     listener: MvpRecyclerContract.Listener
 ) : MvpBaseRecyclerAdapter<HOLDER>(presenter, listener),
-    MvpRecyclerContract.InternetRecyclerAdapter<HOLDER> {
+    MvpRecyclerContract.RecyclerAdapter<HOLDER> {
 
     override var networkError: Boolean = false
 
     override fun refresh() {
         dataCount = 0
         prepare()
-        presenter.refresh(this)
+        presenter.refresh()
     }
 
     override fun tryAgain() {
         prepare()
-        presenter.loadMoreRecyclerData(this)
+        presenter.loadMoreRecyclerData()
     }
 
     private fun prepare() {
