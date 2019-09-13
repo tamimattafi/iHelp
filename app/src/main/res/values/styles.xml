@@ -5,8 +5,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorControlNormal">@color/colorPrimaryDark</item>
-        <item name="colorControlActivated">@color/colorPrimaryDark</item>
     </style>
 
     <style name="HorizontalDivider">
@@ -19,6 +17,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@android:drawable/divider_horizontal_dark</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="android:colorForeground">@color/colorGrayLight</item>
     </style>
 
     <style name="MaterialButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">

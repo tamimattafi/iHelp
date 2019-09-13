@@ -1,13 +1,10 @@
 package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login
 
-import com.tamimattafi.ihelp.app.di.scopes.LoginScope
 import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BasePresenter
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
-import com.tamimattafi.ihelp.repository.auth.AuthContract
-import com.tamimattafi.ihelp.repository.auth.LoginRepository
+import com.tamimattafi.ihelp.repository.auth.global.AuthContract
 import javax.inject.Inject
 
-@LoginScope
 class LoginPresenter @Inject constructor(view: LoginContract.View) : BasePresenter<LoginContract.View>(view), LoginContract.Presenter {
 
     @Inject

@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.repository.auth
+package com.tamimattafi.ihelp.repository.auth.global
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
@@ -6,7 +6,8 @@ import com.tamimattafi.ihelp.model.auth.LoginCredentials
 import com.tamimattafi.ihelp.model.auth.Token
 import javax.inject.Inject
 
-class AuthPreferences @Inject constructor(private val preferences: SharedPreferences) : AuthContract.Preferences {
+class AuthPreferences @Inject constructor(private val preferences: SharedPreferences) :
+    AuthContract.Preferences {
 
     override fun isLoggedIn() : Boolean = preferences.getBoolean(LOGGED_IN, false)
 
@@ -15,7 +16,8 @@ class AuthPreferences @Inject constructor(private val preferences: SharedPrefere
         apply()
     }
 
-    override fun getLoginCredentials() : LoginCredentials? = Gson().fromJson(preferences.getString(CREDENTIALS, null), LoginCredentials::class.java)
+    override fun getLoginCredentials() : LoginCredentials? = Gson().fromJson(preferences.getString(
+        CREDENTIALS, null), LoginCredentials::class.java)
 
     override fun setLoginCredentials(credentials: LoginCredentials) = with(preferences.edit()) {
         putString(CREDENTIALS, Gson().toJson(credentials))

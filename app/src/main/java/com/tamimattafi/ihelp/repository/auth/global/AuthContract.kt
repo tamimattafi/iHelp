@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.repository.auth
+package com.tamimattafi.ihelp.repository.auth.global
 
 import com.tamimattafi.ihelp.interractor.AuthService
 import com.tamimattafi.ihelp.model.auth.BaseCredentials
@@ -25,7 +25,8 @@ interface AuthContract {
     }
 
 
-    abstract class BaseAuthRepository<T : BaseCredentials> : Base<T> {
+    abstract class BaseAuthRepository<T : BaseCredentials> :
+        Base<T> {
 
         private var onSuccess: (() -> Unit)? = null
         private var onFailure: ((message: String) -> Unit)? = null

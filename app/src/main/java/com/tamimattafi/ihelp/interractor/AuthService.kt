@@ -14,4 +14,5 @@ interface AuthService {
 
     @POST("users/register")
     fun register(registrationCredentials: RegistrationCredentails) : Call<Token>
+
 }
