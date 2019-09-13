@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.reset
+package com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.reset
 
 import android.os.Bundle
 import android.view.View
@@ -17,20 +17,20 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
     lateinit var presenter: ResetContract.Presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        sendCodeBtn.setOnClickListener {
-            presenter.onSendBtnPressed()
+        verify.setOnClickListener {
+            presenter.onVerifyBtnPressed()
         }
     }
-
-    override fun setCodeAwaitingMode() {
-        sendCodeBtn.isEnabled = false
-        verifyCodeBtn.isEnabled = true
-    }
-
     override fun isEmailValid() = InputUtils.isEditTextAnEmail(email, emailLayout)
 
     override fun getEmail() = email.text.toString()
 
-    override fun getCode() = code.text.toString()
+    override fun onEmailSent() {
+
+    }
+
+    override fun showError(message: String) {
+
+    }
 
 }

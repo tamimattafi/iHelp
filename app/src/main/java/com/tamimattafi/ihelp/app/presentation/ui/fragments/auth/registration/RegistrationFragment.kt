@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tamimattafi.ihelp.R
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.base.SelectionDialogContract
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.InfoDialog
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.LoadingDialog
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.sub.StringSelectionDialog
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.utils.AppUtils
 import com.tamimattafi.ihelp.utils.FormUtils
@@ -23,13 +25,13 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     lateinit var presenter: RegistrationContract.Presenter
 
     private val errorDialog by lazy {
-        InfoDialog(appContext).apply {
+        InfoDialog(appActivity).apply {
             title = appContext.resources.getString(R.string.registration_error)
         }
     }
 
     private val loadingDialog by lazy {
-        LoadingDialog(appContext).apply {
+        LoadingDialog(appActivity).apply {
             with(appContext.resources) {
                 title = getString(R.string.creating_user)
                 hint = getString(R.string.please_wait)
@@ -37,9 +39,27 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
         }
     }
 
+    private val typeDialog by lazy {
+        StringSelectionDialog(appActivity).apply {
+            bindData(
+                RegistrationValues.getTypeList(appContext),
+                object : SelectionDialogContract.ListDialogActionListener<String> {
+                    override fun onItemSelected(item: String) {
+                        type.setText(item)
+                    }
+                }
+
+            )
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         registerBtn.setOnClickListener {
             presenter.onRegisterBtnPressed()
+        }
+
+        type.setOnClickListener {
+            typeDialog.show()
         }
     }
 
@@ -60,12 +80,15 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
 
     override fun isFormValid() = FormUtils.isFormCorrect(username, usernameLayout,
         email, emailLayout,
-        password, passwordLayout)
+        password, passwordLayout,
+        type, typeLayout)
 
     override fun getUsername() = username.text.toString()
 
     override fun getEmail() = email.text.toString()
 
     override fun getPassword() = password.text.toString()
+
+    override fun getType(): Boolean = RegistrationValues.getType(appContext, type.text.toString())
 
 }

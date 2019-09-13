@@ -20,9 +20,6 @@
     <string name="sign_up">Sign up</string>
     <string name="username">Username</string>
     <string name="register">Register</string>
-    <string name="send_code">Send code</string>
-    <string name="verify_code">Verify code</string>
-    <string name="code">Code</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="menu">Menu</string>
@@ -42,4 +39,8 @@
     <string name="refresh">Refresh</string>
     <string name="something_went_wrong_internet_connection">Failed to load next data! Please check your internet connection and try again.</string>
     <string name="try_again">Try Again</string>
+    <string name="account_type">Account Type</string>
+    <string name="volunteer">Volunteer</string>
+    <string name="organization">Organization</string>
+    <string name="verify">Verify</string>
 </resources>

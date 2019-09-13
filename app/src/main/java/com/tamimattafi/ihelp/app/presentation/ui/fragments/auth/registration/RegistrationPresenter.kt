@@ -1,7 +1,7 @@
 package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration
 
 import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BasePresenter
-import com.tamimattafi.ihelp.model.auth.RegistrationCredentails
+import com.tamimattafi.ihelp.model.auth.RegistrationCredentials
 import com.tamimattafi.ihelp.repository.auth.global.AuthContract
 import javax.inject.Inject
 
@@ -10,17 +10,18 @@ class RegistrationPresenter @Inject constructor(view: RegistrationContract.View)
 
 
     @Inject
-    lateinit var repository: AuthContract.BaseAuthRepository<RegistrationCredentails>
+    lateinit var repository: AuthContract.BaseAuthRepository<RegistrationCredentials>
 
 
     override fun onRegisterBtnPressed() {
         with(view) {
             if (isFormValid()) {
                 repository.authenticate(
-                    RegistrationCredentails(
+                    RegistrationCredentials(
                         getUsername(),
                         getEmail(),
-                        getPassword()
+                        getPassword(),
+                        getType()
                     )
                 ).setOnSuccessListener { onRegisterSuccess() }.setOnFailureListener { showError(it) }
             }

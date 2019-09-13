@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.confirmation
+package com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.confirmation
 
 import com.tamimattafi.ihelp.R
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
@@ -11,5 +11,19 @@ class ConfirmationFragment : NavigationContract.NavigationFragment() , Confirmat
 
     @Inject
     lateinit var presenter : ConfirmationContract.Presenter
+
+    override fun onConfirmSuccess() {
+
+    }
+
+    override fun showError(message: String) {
+
+    }
+
+    override fun isFormValid(): Boolean = false
+
+    override fun getFirstPassword(): String = ""
+
+    override fun getSecondPassword(): String = ""
 
 }

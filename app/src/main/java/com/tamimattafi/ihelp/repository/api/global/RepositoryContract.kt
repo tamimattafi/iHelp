@@ -32,7 +32,7 @@ interface RepositoryContract {
             onListComplete = null
         }
 
-        override fun getNextPage(): Base<T> {
+        override fun getNextPage(): RepositoryBase<T> {
             getListCall().enqueue(object : Callback<ListPage<T>> {
                 override fun onFailure(call: Call<ListPage<T>>, t: Throwable) {
                     onFailure?.invoke(t.localizedMessage ?: t.message ?: t.toString())

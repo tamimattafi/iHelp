@@ -1,6 +1,8 @@
 package com.tamimattafi.ihelp.model.auth
 
+import com.tamimattafi.ihelp.model.auth.global.BaseCredentials
+
 data class LoginCredentials(
-    override var email: String,
-    override var password: String
+    override val email: String,
+    override val password: String
 ) : BaseCredentials

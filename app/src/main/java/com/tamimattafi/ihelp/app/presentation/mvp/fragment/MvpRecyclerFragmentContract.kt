@@ -1,16 +1,13 @@
-package com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global
+package com.tamimattafi.ihelp.app.presentation.mvp.fragment
 
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerAdapter
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerContract
 
-interface BaseHomeContract {
+interface MvpRecyclerFragmentContract {
 
     interface Presenter<HOLDER : MvpRecyclerContract.Holder> : MvpRecyclerContract.Presenter<HOLDER>
 
-    interface View : MvpRecyclerContract.Listener {
-        fun showError(message : String)
-    }
-
+    interface View<HOLDER : MvpRecyclerContract.Holder> : MvpRecyclerContract.View<HOLDER> , MvpRecyclerContract.Listener
 
     abstract class Adapter<HOLDER : MvpRecyclerContract.Holder>(
         presenter: MvpRecyclerContract.Presenter<HOLDER>,

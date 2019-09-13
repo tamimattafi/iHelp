@@ -1,9 +1,10 @@
 package com.tamimattafi.ihelp.repository.auth.global
 
 import com.tamimattafi.ihelp.interractor.auth.AuthService
-import com.tamimattafi.ihelp.model.auth.BaseCredentials
+import com.tamimattafi.ihelp.model.auth.global.BaseCredentials
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
 import com.tamimattafi.ihelp.model.auth.Token
+import com.tamimattafi.ihelp.repository.global.SimplePreferencesRepository
 import javax.inject.Inject
 import retrofit2.Call
 import retrofit2.Callback
@@ -11,36 +12,28 @@ import retrofit2.Response
 
 interface AuthContract {
 
-    interface Base<T : BaseCredentials> {
-        fun authenticate(credentials : T) : Base<T>
+    abstract class Base<T : BaseCredentials> : SimplePreferencesRepository<T>() {
+        abstract fun authenticate(credentials : T) : SimplePreferencesRepository<T>
     }
 
     interface Preferences {
         fun isLoggedIn() : Boolean
         fun setLoggedIn(loggedIn : Boolean)
-        fun setLoginCredentials(credentials: LoginCredentials)
-        fun getLoginCredentials() : LoginCredentials?
-        fun setToken(token: Token)
-        fun getToken() : Token?
+        fun setLoginCredentials(credentials: LoginCredentials?)
+        fun getLoginCredentials() : LoginCredentials
+        fun setToken(token: Token?)
+        fun getToken() : Token
     }
 
-
-    abstract class BaseAuthRepository<T : BaseCredentials> :
-        Base<T> {
-
-        private var onSuccess: (() -> Unit)? = null
-        private var onFailure: ((message: String) -> Unit)? = null
+    abstract class BaseAuthRepository<T : BaseCredentials> : Base<T>() {
 
         @Inject
-        lateinit var interractor : AuthService
+        protected lateinit var interractor : AuthService
 
-        @Inject
-        lateinit var preferences: Preferences
-
-        abstract fun getTokenCall(credentials : T) : Call<Token>
+        protected abstract fun getAuthCall(credentials : T) : Call<Token>
 
         override fun authenticate(credentials: T) : BaseAuthRepository<T> {
-            getTokenCall(credentials).enqueue(object : Callback<Token> {
+            getAuthCall(credentials).enqueue(object : Callback<Token> {
                 override fun onFailure(call: Call<Token>, t: Throwable) {
                     onFailure?.invoke(t.localizedMessage ?: t.message ?: t.toString())
                 }
@@ -49,9 +42,10 @@ interface AuthContract {
                     response.body()?.let {
                         with(preferences) {
                             setLoggedIn(true)
-                            setLoginCredentials(credentials.toLoginCredntials())
+                            setLoginCredentials(credentials.toLoginCredentials())
                             setToken(it)
                         }
+                        onSuccess?.invoke()
                     } ?: onFailure?.invoke(response.errorBody()?.string() ?: "Token is null")
                 }
 
@@ -59,18 +53,6 @@ interface AuthContract {
 
             return this
         }
-
-        fun setOnSuccessListener(listener : () -> Unit) : BaseAuthRepository<T> {
-            onSuccess = listener
-            return this
-        }
-
-        fun setOnFailureListener(listener: (message : String) -> Unit) : BaseAuthRepository<T> {
-            onFailure = listener
-            return this
-        }
-        
-
     }
 
 }

@@ -1,21 +1,23 @@
-package com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global
+package com.tamimattafi.ihelp.app.presentation.mvp.fragment
 
 import android.os.Bundle
 import android.view.View
 import com.tamimattafi.ihelp.R
+import com.tamimattafi.ihelp.app.presentation.custom.holders.Actions
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerContract
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerController
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global.BaseHomeContract
 import com.tamimattafi.ihelp.utils.AppUtils
 import kotlinx.android.synthetic.main.fragment_recycler.*
 import kotlinx.android.synthetic.main.toolbar_home.*
 import javax.inject.Inject
 
-abstract class BaseHomeFragment<
+abstract class MvpRecyclerFragment<
         HOLDER : MvpRecyclerContract.Holder,
-        PRESENTER : BaseHomeContract.Presenter<HOLDER>,
-        ADAPTER : BaseHomeContract.Adapter<HOLDER>
-        > : NavigationContract.NavigationFragment(), BaseHomeContract.View {
+        PRESENTER : MvpRecyclerFragmentContract.Presenter<HOLDER>,
+        ADAPTER : MvpRecyclerFragmentContract.Adapter<HOLDER>
+        > : NavigationContract.NavigationFragment(), MvpRecyclerFragmentContract.View<HOLDER> {
 
     override val layoutId: Int = R.layout.fragment_home
 
@@ -25,15 +27,9 @@ abstract class BaseHomeFragment<
     @Inject
     lateinit var adapter : ADAPTER
 
-    abstract fun getTitle() : String
-    abstract fun getSearchFragment() : NavigationContract.NavigationFragment
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter.controller = MvpRecyclerController(recycler)
-        search.setOnClickListener {
-            navigationManager.requestSlideRightScreen(getSearchFragment())
-        }
     }
 
 
@@ -50,6 +46,17 @@ abstract class BaseHomeFragment<
     override fun showError(message: String) {
         AppUtils.showToast(appContext, message)
     }
+
+    override fun onHolderAction(listPosition: Int, adapterPosition: Int, action: Int, itemId: Int?) {
+        Actions.apply {
+            when (action) {
+                ACTION_REFRESH -> adapter.refresh()
+                ACTION_TRY_AGAIN -> adapter.tryAgain()
+            }
+        }
+    }
+
+    override fun getAdapter(): MvpRecyclerContract.RecyclerAdapter<HOLDER> = adapter
 
 
 

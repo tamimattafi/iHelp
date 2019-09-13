@@ -6,17 +6,14 @@ import com.tamimattafi.zennex.app.mvp.BaseContract
 
 interface MvpRecyclerContract {
 
-    interface RecyclerAdapter<HOLDER : Holder> : PagerRecycler {
+    interface RecyclerAdapter<HOLDER : Holder> : PagerRecycler, Refresher {
         var allData : Boolean
         var isLoading : Boolean
+        var networkError : Boolean
         var controller: RecyclerController<HOLDER>?
         fun getViewHolder(listPosition : Int) : HOLDER?
         fun setDataCount(dataCount : Int) : Boolean
         fun isEmpty(): Boolean
-    }
-
-    interface InternetRecyclerAdapter<HOLDER : Holder> : RecyclerAdapter<HOLDER>, Refresher {
-        var networkError: Boolean
     }
 
     interface RecyclerController<HOLDER : Holder> {
@@ -55,12 +52,13 @@ interface MvpRecyclerContract {
 
     interface Presenter<HOLDER : Holder> : BaseContract.Presenter {
         fun bindViewHolder(holder: HOLDER)
-        fun loadMoreRecyclerData(recycler : RecyclerAdapter<HOLDER>)
-        fun refresh(recycler: RecyclerAdapter<HOLDER>)
+        fun loadMoreRecyclerData()
+        fun refresh()
     }
 
     interface View<HOLDER : Holder> : Listener {
         fun showError(message : String)
+        fun getAdapter() : MvpRecyclerContract.RecyclerAdapter<HOLDER>
     }
 
     interface RefreshableView<HOLDER : Holder> : View<HOLDER> {
