@@ -13,4 +13,8 @@ class MainActivity : NavigationActivity() {
         requestAttachBaseScreen(LoginFragment())
     }
 
+    override fun beforeViewCreated() {
+        theme.applyStyle(R.style.AppTheme, true)
+    }
+
 }

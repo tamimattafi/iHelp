@@ -41,7 +41,7 @@
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login"
+            android:id="@+id/loginBtn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

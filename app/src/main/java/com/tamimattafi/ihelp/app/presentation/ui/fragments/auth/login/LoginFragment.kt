@@ -1,8 +1,12 @@
 package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login
 
 
+import android.os.Bundle
+import android.view.View
 import com.tamimattafi.ihelp.R
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
+import com.tamimattafi.ihelp.utils.AppUtils
 import com.tamimattafi.ihelp.utils.FormUtils
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
@@ -26,8 +30,18 @@ class LoginFragment : NavigationContract.NavigationFragment() , LoginContract.Vi
     }
 
     override fun showError(message: String) {
-
+        AppUtils.showToast(context!!, "Error")
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        signUp.setOnClickListener {
+            navigationManager.requestSlideLeftScreen(RegistrationFragment())
+        }
+
+        loginBtn.setOnClickListener {
+            presenter.onLoginBtnPressed()
+        }
+    }
 
 }

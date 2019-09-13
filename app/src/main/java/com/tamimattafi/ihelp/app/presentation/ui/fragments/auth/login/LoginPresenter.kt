@@ -4,7 +4,6 @@ import com.tamimattafi.ihelp.app.di.scopes.LoginScope
 import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BasePresenter
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
 import com.tamimattafi.ihelp.repository.auth.AuthContract
-import com.tamimattafi.ihelp.repository.auth.LoginRepository
 import javax.inject.Inject
 
 @LoginScope
