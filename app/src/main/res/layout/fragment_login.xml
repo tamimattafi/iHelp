@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:fillViewport="true"
-            android:layout_height="fill_parent"
-            android:fitsSystemWindows="true">
+<ScrollView
+        android:background="@color/colorForeground"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fillViewport="true"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,13 +18,17 @@
         android:paddingRight="24dp">
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/emailLayout"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
                     android:id="@+id/email"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -28,36 +36,48 @@
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight"
                 android:id="@+id/passwordLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText android:id="@+id/password"
+            android:layout_height="wrap_content">
+            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrayDark"
+                    android:background="@drawable/background_edit_text_field"
+                    android:id="@+id/password"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:inputType="textPassword"
                       android:hint="@string/password"/>
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonAccent"
             android:id="@+id/loginBtn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
-            android:padding="12dp"
+            android:padding="16dp"
             android:text="@string/login"/>
 
         <TextView
-                android:focusable="true"
-                android:clickable="true"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayLight"
+                android:text="@string/create_new_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonRed"
                 android:id="@+id/signUp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@string/you_don_t_have_an_account_sign_up"
-                android:gravity="center"
-                android:textSize="16sp"/>
+                android:padding="16dp"
+                android:text="@string/create_new_account"/>
     </LinearLayout>
 </ScrollView>

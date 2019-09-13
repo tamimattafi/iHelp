@@ -3,7 +3,6 @@ package com.tamimattafi.ihelp.utils
 import com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
 import com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
-import com.tamimattafi.ihelp.utils.InputUtils.isPasswordsEqual
 
 
 object FormUtils {
@@ -11,19 +10,13 @@ object FormUtils {
     fun isFormCorrect(
         username: FormEditText, usernameLayout: FormInputLayout,
         email: FormEditText, emailLayout: FormInputLayout,
-        password: FormEditText, passwordLayout: FormInputLayout,
-        confirmPassword: FormEditText, confirmPasswordLayout: FormInputLayout
-    ): Boolean {
+        password: FormEditText, passwordLayout: FormInputLayout): Boolean {
         return when {
             !InputUtils.isLengthEnough(username, usernameLayout, 6) || !InputUtils.isEditTextNoSpecialCharacters(username, usernameLayout) -> {
                 false
             }
             !isFormCorrect(email.apply { requestFocus() }, emailLayout, password, passwordLayout) -> {
                 hideError(usernameLayout)
-                false
-            }
-            !isPasswordsEqual(password, confirmPassword, confirmPasswordLayout) -> {
-                hideError(confirmPasswordLayout)
                 false
             }
             else -> {

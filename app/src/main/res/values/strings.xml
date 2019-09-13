@@ -7,15 +7,13 @@
     <string name="email_malformed">Email is malformed</string>
     <string name="username_invalid">Username is invalid, it must only contain letters A–z or digits 0–9</string>
     <string name="password_is_weak">Password is so weak, it must contain letters A–z and digits 0–9</string>
-    <string name="passwords_should_match">Passwords don\'t match</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="confirm_password">Confirm password</string>
     <string name="login">Login</string>
     <string name="username">Username</string>
     <string name="register">Register</string>
-    <string name="you_don_t_have_an_account_sign_up">You don\'t have an account? Sign up</string>
+    <string name="create_new_account">Create new account</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
     <string name="close">Close</string>

@@ -37,8 +37,7 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
 
     override fun isFormValid() = FormUtils.isFormCorrect(username, usernameLayout,
         email, emailLayout,
-        password, passwordLayout,
-        confirmPassword, confirmPasswordLayout)
+        password, passwordLayout)
 
     override fun getUsername() = username.text.toString()
 

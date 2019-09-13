@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:fillViewport="true"
-            android:layout_height="fill_parent"
-            android:fitsSystemWindows="true">
+<ScrollView
+        android:background="@color/colorForeground"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fillViewport="true"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
     <LinearLayout
+            android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="56dp"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
-            android:background="@drawable/background_dialog"
     >
 
         <TextView
-                android:layout_margin="8dp"
                 android:layout_width="match_parent"
+                android:gravity="center"
                 android:textSize="18sp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorGrayLight"
                 android:textStyle="bold"
                 android:text="@string/sign_up"
                 android:layout_height="wrap_content"/>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/usernameLayout"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
                     android:id="@+id/username"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -39,12 +46,16 @@
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/emailLayout"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
+                android:id="@+id/emailLayout">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrayDark"
+                    android:background="@drawable/background_edit_text_field"
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -53,12 +64,17 @@
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight"
+                app:passwordToggleEnabled="true"
                 android:id="@+id/passwordLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
+                android:layout_height="wrap_content">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrayDark"
+                    android:background="@drawable/background_edit_text_field"
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -66,27 +82,14 @@
                     android:hint="@string/password"/>
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
-        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
-                android:id="@+id/confirmPasswordLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:id="@+id/confirmPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="@string/confirm_password"/>
-        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonAccent"
                 android:id="@+id/registerBtn"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:padding="12dp"
+                android:padding="16dp"
                 android:text="@string/register"/>
 
     </LinearLayout>

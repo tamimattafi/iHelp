@@ -65,19 +65,4 @@ object InputUtils {
             }
         }
     }
-
-    fun isPasswordsEqual(password: FormEditText, confirmPassword: FormEditText, confirmPasswordLayout: FormInputLayout): Boolean {
-        return if (password.text.toString() == confirmPassword.text.toString()) {
-            with(confirmPasswordLayout) {
-                error = null
-                isErrorEnabled = false
-            }
-            true
-        } else {
-            confirmPassword.error = confirmPasswordLayout.context.resources.getString(R.string.passwords_should_match)
-            false
-        }
-
-    }
-
 }
