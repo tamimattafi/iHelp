@@ -51,7 +51,9 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="16dp"
-            android:text="@string/send_code"/>
+            android:text="@string/send_code"
+            app:iconGravity="textStart"
+            app:icon="@drawable/ic_send"/>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
@@ -80,7 +82,9 @@
                 android:layout_marginBottom="24dp"
                 android:padding="16dp"
                 android:enabled="false"
-                android:text="@string/verify_code"/>
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_verified"
+                android:text="@string/verify_code" />
 
     </LinearLayout>
 </ScrollView>

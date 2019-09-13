@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<ScrollView
+        android:background="@color/colorForeground"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
-</LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.MaterialMenuItem
+                app:drawable="@drawable/ic_sort_by"
+                app:infoType="icon"
+                app:hintGravity="end"
+                android:id="@+id/orderBy"
+                android:padding="12dp"
+                app:label="Order By"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <View style="@style/HorizontalDivider">
+
+        </View>
+        <com.tamimattafi.ihelp.app.presentation.custom.views.MaterialMenuItem
+                app:hintGravity="end"
+                android:id="@+id/direction"
+                app:drawable="@drawable/ic_direction"
+                app:infoType="icon"
+                android:padding="12dp"
+                app:label="Direction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

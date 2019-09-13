@@ -3,6 +3,9 @@ package com.tamimattafi.ihelp
 import android.os.Bundle
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationActivity
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login.LoginFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainManager
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.menu.MenuFragment
 
 class MainActivity : NavigationActivity() {
 
@@ -10,7 +13,7 @@ class MainActivity : NavigationActivity() {
     override var rootId: Int = R.id.root
 
     override fun onViewCreated(savedInstanceState: Bundle?) {
-        requestAttachBaseScreen(LoginFragment())
+        requestAttachBaseScreen(MenuFragment())
     }
 
     override fun beforeViewCreated() {

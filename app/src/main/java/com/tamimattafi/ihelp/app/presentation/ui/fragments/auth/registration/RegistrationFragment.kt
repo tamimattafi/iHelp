@@ -12,6 +12,7 @@ import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.utils.AppUtils
 import com.tamimattafi.ihelp.utils.FormUtils
 import kotlinx.android.synthetic.main.fragment_registration.*
+import kotlinx.android.synthetic.main.toolbar_registration.*
 import javax.inject.Inject
 
 class RegistrationFragment : NavigationContract.NavigationFragment() , RegistrationContract.View {
@@ -40,6 +41,10 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         registerBtn.setOnClickListener {
             presenter.onRegisterBtnPressed()
+        }
+
+        back.setOnClickListener {
+            navigationManager.requestBackPress()
         }
     }
 
