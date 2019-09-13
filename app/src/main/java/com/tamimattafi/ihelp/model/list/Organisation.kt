@@ -1,4 +1,6 @@
-package com.tamimattafi.ihelp.app.model
+package com.tamimattafi.ihelp.model.list
+
+import com.tamimattafi.ihelp.model.Contacts
 
 
 data class Organisation(
@@ -10,5 +12,5 @@ data class Organisation(
     val ownerId: Int,
     val country: String = "",
     val city: String = "",
-    val adress: String = ""
+    val address: String = ""
 )

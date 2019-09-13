@@ -5,7 +5,7 @@ import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login.LoginFragm
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.reset.ResetFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.welcome.WelcomeFragment
-import com.tamimattafi.ihelp.interractor.AuthService
+import com.tamimattafi.ihelp.interractor.auth.AuthService
 import com.tamimattafi.ihelp.repository.auth.global.AuthContract
 import com.tamimattafi.ihelp.repository.auth.global.AuthPreferences
 import dagger.Binds
@@ -39,7 +39,8 @@ abstract class AuthFragmentsModule {
         @JvmStatic
         @Provides
         @Reusable
-        fun provideAuthService(retrofit: Retrofit) : AuthService = retrofit.create(AuthService::class.java)
+        fun provideAuthService(retrofit: Retrofit) : AuthService = retrofit.create(
+            AuthService::class.java)
     }
 
     @Binds @Reusable

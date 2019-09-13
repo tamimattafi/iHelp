@@ -1,6 +1,6 @@
-package com.tamimattafi.ihelp.app.model
+package com.tamimattafi.ihelp.model.list
 
-data class Vocancy(
+data class Vacancy(
     val id: Int,
     val dateRange: String,
     val eventName: String,

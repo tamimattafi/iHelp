@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.model
+package com.tamimattafi.ihelp.model
 
 data class Contacts(
     var phone: String,

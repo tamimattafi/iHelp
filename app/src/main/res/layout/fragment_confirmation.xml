@@ -55,7 +55,7 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
-            android:id="@+id/loginBtn"
+            android:id="@+id/login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -74,7 +74,7 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonRed"
-                android:id="@+id/signUp"
+                android:id="@+id/register"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"

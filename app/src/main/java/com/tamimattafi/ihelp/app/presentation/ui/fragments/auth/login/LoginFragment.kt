@@ -36,15 +36,15 @@ class LoginFragment : NavigationContract.NavigationFragment() , LoginContract.Vi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        signUp.setOnClickListener {
+        register.setOnClickListener {
             navigationManager.requestSlideLeftScreen(RegistrationFragment())
         }
 
-        loginBtn.setOnClickListener {
+        login.setOnClickListener {
             presenter.onLoginBtnPressed()
         }
 
-        forgotPasswordLabel.setOnClickListener {
+        reset.setOnClickListener {
             navigationManager.requestSlideLeftScreen(ResetFragment())
         }
     }

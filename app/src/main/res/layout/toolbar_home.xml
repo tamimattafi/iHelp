@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+        android:background="@color/colorForeground"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:overScrollMode="always"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.tamimattafi.ihelp.app.presentation.custom.views.BaseToolbar
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageButton
+                    android:tint="@color/colorGrayDark"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_search"
+                    android:id="@+id/search"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+            <TextView
+                    android:layout_toEndOf="@id/search"
+                    android:textColor="@color/colorGrayDark"
+                    android:id="@+id/title"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/filter"
+                    android:layout_toRightOf="@id/search"/>
+
+            <ImageButton
+                    android:tint="@color/colorGrayDark"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_filter"
+                    android:id="@+id/filter"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </com.tamimattafi.ihelp.app.presentation.custom.views.BaseToolbar>
+
+</com.google.android.material.appbar.AppBarLayout>

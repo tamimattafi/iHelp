@@ -19,12 +19,12 @@
     >
 
         <TextView
-                android:layout_width="match_parent"
+                android:layout_margin="16dp"
+                android:textSize="24sp"
                 android:gravity="center"
-                android:textSize="18sp"
                 android:textColor="@color/colorGrayLight"
-                android:textStyle="bold"
-                android:text="@string/sign_up"
+                android:text="@string/create_new_account"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
@@ -67,6 +67,7 @@
                 style="@style/Widget.Design.TextInputLayout"
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight"
+                app:passwordToggleTint="@color/colorGrayLight"
                 app:passwordToggleEnabled="true"
                 android:id="@+id/passwordLayout"
                 android:layout_width="match_parent"
@@ -91,6 +92,21 @@
                 android:layout_marginBottom="24dp"
                 android:padding="16dp"
                 android:text="@string/register"/>
+        <TextView
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayLight"
+                android:text="@string/already_have_an_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonRed"
+                android:id="@+id/login"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/login"/>
     </LinearLayout>
 </ScrollView>

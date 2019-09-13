@@ -18,6 +18,15 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
+        <TextView
+                android:layout_margin="16dp"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayLight"
+                android:text="@string/enter_your_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
@@ -56,7 +65,7 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
-            android:id="@+id/loginBtn"
+            android:id="@+id/login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -65,11 +74,11 @@
             android:text="@string/login"/>
 
         <TextView
-                android:id="@+id/forgotPasswordLabel"
+                android:id="@+id/reset"
                 android:layout_marginBottom="24dp"
                 android:gravity="center"
-                android:textColor="@color/colorGrayLight"
-                android:text="@string/forgot_password"
+                android:textColor="@color/colorGrayDark"
+                android:text="@string/forgot_password_reset"
                 android:clickable="true"
                 android:focusable="true"
                 android:layout_width="match_parent"
@@ -77,7 +86,7 @@
 
         <TextView
                 android:layout_marginTop="48dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center"
                 android:textColor="@color/colorGrayLight"
                 android:text="@string/not_registered_yet"
@@ -86,7 +95,7 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonRed"
-                android:id="@+id/signUp"
+                android:id="@+id/register"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"

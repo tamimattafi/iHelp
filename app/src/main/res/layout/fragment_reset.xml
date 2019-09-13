@@ -17,12 +17,11 @@
         android:paddingRight="24dp">
 
         <TextView
-                android:layout_marginBottom="24dp"
-                android:textSize="36sp"
+                android:layout_margin="16dp"
+                android:textSize="24sp"
                 android:gravity="center"
-                android:textStyle="bold"
                 android:textColor="@color/colorGrayLight"
-                android:text="@string/forgot_password"
+                android:text="@string/reset_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
