@@ -8,7 +8,7 @@ import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.InfoDialog
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.LoadingDialog
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.reset.ResetFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.reset.ResetFragment
 import com.tamimattafi.ihelp.utils.FormUtils
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject

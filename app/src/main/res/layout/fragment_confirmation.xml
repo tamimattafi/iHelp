@@ -9,68 +9,75 @@
         android:fitsSystemWindows="true">
 
     <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp">
-
-        <TextView
-                android:layout_marginBottom="24dp"
-                android:textSize="36sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/colorGrayLight"
-                android:text="@string/restore_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/newPasswordLayout"
+                android:id="@+id/emailLayout"
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
                     android:textColor="@color/colorGrayDark"
-                    android:id="@+id/newPassword"
+                    android:id="@+id/email"
                     android:textSize="14sp"
                     android:background="@drawable/background_edit_text_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="@string/new_password" />
+                    android:hint="@string/email" />
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/repeatPasswordLayout"
                 app:hintTextColor="@color/colorGrayDark"
-                android:textColorHint="@color/colorGrayLight">
+                android:textColorHint="@color/colorGrayLight"
+                android:id="@+id/passwordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:textColor="@color/colorGrayDark"
-                    android:id="@+id/repeatPassword"
                     android:textSize="14sp"
+                    android:textColor="@color/colorGrayDark"
                     android:background="@drawable/background_edit_text_field"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/repeat" />
+                    android:id="@+id/password"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:inputType="textPassword"
+                      android:hint="@string/password"/>
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
-                android:id="@+id/done"
+            android:id="@+id/login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="16dp"
+            android:text="@string/login"/>
+
+        <TextView
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayLight"
+                android:text="@string/create_new_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonRed"
+                android:id="@+id/register"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp"
                 android:padding="16dp"
-                android:text="@string/done"/>
-
+                android:text="@string/create_new_account"/>
     </LinearLayout>
 </ScrollView>
