@@ -10,8 +10,7 @@ object FormUtils {
     fun isFormCorrect(
         username: FormEditText, usernameLayout: FormInputLayout,
         email: FormEditText, emailLayout: FormInputLayout,
-        password: FormEditText, passwordLayout: FormInputLayout
-    ): Boolean {
+        password: FormEditText, passwordLayout: FormInputLayout): Boolean {
         return when {
             !InputUtils.isLengthEnough(username, usernameLayout, 6) || !InputUtils.isEditTextNoSpecialCharacters(username, usernameLayout) -> {
                 false
@@ -48,7 +47,7 @@ object FormUtils {
         }
     }
 
-    fun hideError(inputLayout: FormInputLayout) {
+    private fun hideError(inputLayout: FormInputLayout) {
         inputLayout.apply {
             requestFocus()
             isErrorEnabled = false

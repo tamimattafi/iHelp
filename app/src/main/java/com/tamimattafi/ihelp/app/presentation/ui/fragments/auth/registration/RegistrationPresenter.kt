@@ -13,5 +13,17 @@ class RegistrationPresenter @Inject constructor(view: RegistrationContract.View)
     lateinit var repository: AuthContract.BaseAuthRepository<RegistrationCredentails>
 
 
-
+    override fun onRegisterBtnPressed() {
+        with(view) {
+            if (isFormValid()) {
+                repository.authenticate(
+                    RegistrationCredentails(
+                        getUsername(),
+                        getEmail(),
+                        getPassword()
+                    )
+                ).setOnSuccessListener { onRegisterSuccess() }.setOnFailureListener { showError(it) }
+            }
+        }
+    }
 }

@@ -55,7 +55,7 @@
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
-            android:id="@+id/btn_login"
+            android:id="@+id/loginBtn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -68,13 +68,13 @@
                 android:layout_marginBottom="24dp"
                 android:gravity="center"
                 android:textColor="@color/colorGrayLight"
-                android:text="@string/not_registered_yet"
+                android:text="@string/create_new_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonRed"
-                android:id="@+id/register"
+                android:id="@+id/signUp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
