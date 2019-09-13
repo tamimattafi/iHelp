@@ -29,5 +29,4 @@ class LoginFragment : NavigationContract.NavigationFragment() , LoginContract.Vi
 
     }
 
-
 }

@@ -14,4 +14,6 @@
     <string name="confirm">Confirm</string>
     <string name="close">Close</string>
     <string name="something_went_wrong">Something went wrong! Please try again.</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="not_registered_yet">Not registered yet ?</string>
 </resources>
