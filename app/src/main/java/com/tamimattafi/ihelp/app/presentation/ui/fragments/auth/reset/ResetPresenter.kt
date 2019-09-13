@@ -12,5 +12,6 @@ class ResetPresenter @Inject constructor(view : ResetContract.View) : BasePresen
     }
 
     override fun onVerifyBtnPressed() {
+        view.onCodeVerified()
     }
 }

@@ -23,13 +23,13 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
     lateinit var presenter: RegistrationContract.Presenter
 
     private val errorDialog by lazy {
-        InfoDialog(appContext).apply {
+        InfoDialog(appActivity).apply {
             title = appContext.resources.getString(R.string.registration_error)
         }
     }
 
     private val loadingDialog by lazy {
-        LoadingDialog(appContext).apply {
+        LoadingDialog(appActivity).apply {
             with(appContext.resources) {
                 title = getString(R.string.creating_user)
                 hint = getString(R.string.please_wait)

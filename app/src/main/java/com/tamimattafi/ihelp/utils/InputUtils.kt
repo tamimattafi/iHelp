@@ -65,4 +65,15 @@ object InputUtils {
             }
         }
     }
+
+    fun isPasswordsMatch(passwordText: FormEditText, repeatPasswordText: FormEditText, repeatPasswordLayout: FormInputLayout) =
+        if (passwordText.text.toString() == repeatPasswordText.text.toString()) {
+            repeatPasswordLayout.error = null
+            repeatPasswordLayout.isErrorEnabled = false
+            true
+        } else {
+            repeatPasswordText.requestFocus()
+            repeatPasswordLayout.error = repeatPasswordLayout.context.resources.getString(R.string.passwords_not_match)
+            false
+        }
 }

@@ -11,5 +11,6 @@ interface ResetContract {
         fun getCode(): String
         fun isEmailValid(): Boolean
         fun setCodeAwaitingMode()
+        fun onCodeVerified()
     }
 }
