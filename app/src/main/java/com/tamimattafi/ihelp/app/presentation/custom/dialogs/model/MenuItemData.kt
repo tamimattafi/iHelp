@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.ui.custom.dialogs.model
+package com.tamimattafi.ihelp.app.presentation.custom.dialogs.model
 
 import com.tamimattafi.ihelp.R
 

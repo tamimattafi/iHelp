@@ -8,10 +8,10 @@ import retrofit2.http.POST
 
 interface AuthService {
 
-    @POST("login")
+    @POST("users/login")
     fun login(loginCredentials: LoginCredentials) : Call<Token>
 
 
-    @POST("register")
+    @POST("users/register")
     fun register(registrationCredentials: RegistrationCredentails) : Call<Token>
 }

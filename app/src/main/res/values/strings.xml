@@ -1,43 +1,17 @@
 <resources>
-    <string name="app_name">Zennex</string>
-    <string name="something_went_wrong">Something went wrong, please try again</string>
-    <string name="list">List</string>
-    <string name="scaling">Scaling</string>
-    <string name="parsing">Parsing</string>
-    <string name="map">Map</string>
-    <string name="save">Save</string>
-    <string name="no_connection">No Connection</string>
-    <string name="device_not_connected">Your device is not connected to the internet</string>
-    <string name="refresh">Refresh</string>
-    <string name="create">Create</string>
-    <string name="no_data">No Data</string>
-    <string name="no_data_yet">You seem to have no data yet, do you want to create some?</string>
-    <string name="something_went_wrong_internet_connection">Something went wrong, please check your internet connection
-        and try again
-    </string>
-    <string name="try_again">Try Again</string>
-    <string name="add_item">Add Item</string>
-    <string name="edit_item">Edit Item</string>
-    <string name="discard">Discard</string>
-    <string name="name">Name</string>
-    <string name="this_field_is_required">This field is required</string>
-    <string name="close">Close</string>
+    <string name="app_name">iHelp!</string>
+    <string name="this_feild_is_required">This feild is required</string>
+    <string name="length_must_be_at_least">Length mustbe atleast</string>
+    <string name="characters_long">characters long</string>
+    <string name="email_malformed">Email is malformed</string>
+    <string name="username_invalid">Username is invalid, it must only contain letters A–z or digits 0–9</string>
+    <string name="password_is_weak">Password is so weak, it must contain letters A–z and digits 0–9</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="you_don_t_have_an_account_sign_up">You don\'t have an account? Sign up</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
-    <string name="cancel_action">Cancel Action</string>
-    <string name="do_you_really_want_to_go_back">Do you really want to go back?</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
-    <string name="select_an_image_to_scale">Select an image to scale</string>
-    <string name="select_from_gallery">Select from gallery</string>
-    <string name="take_new_photo">Take new photo</string>
-    <string name="preview">Preview</string>
-    <string name="location">Location:</string>
-    <string name="permission_required">Permission Required</string>
-    <string name="permission_must_be_granted">Permissions must be granted in order to use this feature</string>
-    <string name="grant_permission">Grant Permissions</string>
-    <string name="permissions_are_required">Permissions are required!</string>
-    <string name="permission_was_denied_try_again">Permission was denied, please try again!</string>
-    <string name="language">Language</string>
-    <string name="default_language">Default Language</string>
+    <string name="close">Close</string>
+    <string name="something_went_wrong">Something went wrong! Please try again.</string>
 </resources>

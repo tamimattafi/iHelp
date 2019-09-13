@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.ui.custom.decorators
+package com.tamimattafi.ihelp.app.presentation.custom.decorators
 
 import android.content.Context
 import android.graphics.Rect

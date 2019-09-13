@@ -12,12 +12,7 @@ import retrofit2.Response
 interface AuthContract {
 
     interface Base<T : BaseCredentials> {
-
-        var onSuccess : (() -> Unit)?
-        var onFailure : ((message : String) -> Unit)?
-
-        fun authenticate(credentials : T)
-
+        fun authenticate(credentials : T) : Base<T>
     }
 
     interface Preferences {
@@ -32,8 +27,8 @@ interface AuthContract {
 
     abstract class BaseAuthRepository<T : BaseCredentials> : Base<T> {
 
-        override var onSuccess: (() -> Unit)? = null
-        override var onFailure: ((message: String) -> Unit)? = null
+        private var onSuccess: (() -> Unit)? = null
+        private var onFailure: ((message: String) -> Unit)? = null
 
         @Inject
         lateinit var interractor : AuthService
@@ -43,7 +38,7 @@ interface AuthContract {
 
         abstract fun getTokenCall(credentials : T) : Call<Token>
 
-        override fun authenticate(credentials: T) {
+        override fun authenticate(credentials: T) : BaseAuthRepository<T> {
             getTokenCall(credentials).enqueue(object : Callback<Token> {
                 override fun onFailure(call: Call<Token>, t: Throwable) {
                     onFailure?.invoke(t.localizedMessage ?: t.message ?: t.toString())
@@ -60,6 +55,18 @@ interface AuthContract {
                 }
 
             })
+
+            return this
+        }
+
+        fun setOnSuccessListener(listener : () -> Unit) : BaseAuthRepository<T> {
+            onSuccess = listener
+            return this
+        }
+
+        fun setOnFailureListener(listener: (message : String) -> Unit) : BaseAuthRepository<T> {
+            onFailure = listener
+            return this
         }
         
 

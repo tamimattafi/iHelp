@@ -1,9 +1,9 @@
-package com.tamimattafi.ihelp.app.ui.custom.holders.dialog
+package com.tamimattafi.ihelp.app.presentation.custom.holders.dialog
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.tamimattafi.ihelp.app.ui.custom.dialogs.base.SelectionDialogContract
-import com.tamimattafi.ihelp.app.ui.custom.dialogs.model.MenuItemData
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.base.SelectionDialogContract
+import com.tamimattafi.ihelp.app.presentation.custom.dialogs.model.MenuItemData
 import com.tamimattafi.ihelp.utils.AppUtils
 import kotlinx.android.synthetic.main.item_view_holder_menu_item.view.*
 

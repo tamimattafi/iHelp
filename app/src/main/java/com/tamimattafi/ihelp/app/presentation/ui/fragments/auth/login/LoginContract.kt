@@ -4,13 +4,14 @@ interface LoginContract {
 
     interface Presenter {
         fun onLoginBtnPressed()
-
         fun onForgotPasswordBtnPressed()
     }
 
     interface View {
+        fun isFormValid() : Boolean
         fun getLogin(): String
-
         fun getPassword(): String
+        fun onLoginSuccess()
+        fun showError(message : String)
     }
 }

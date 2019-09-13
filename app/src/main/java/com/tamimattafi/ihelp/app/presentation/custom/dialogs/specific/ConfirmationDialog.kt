@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.ui.custom.dialogs.specific
+package com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific
 
 import android.app.AlertDialog
 import android.content.Context

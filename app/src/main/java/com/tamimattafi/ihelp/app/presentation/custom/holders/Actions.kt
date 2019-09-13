@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.ui.custom.holders
+package com.tamimattafi.ihelp.app.presentation.custom.holders
 
 object Actions {
     //Global

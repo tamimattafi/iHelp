@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.app.ui.custom.dialogs.base
+package com.tamimattafi.ihelp.app.presentation.custom.dialogs.base
 
 import androidx.recyclerview.widget.RecyclerView
 
