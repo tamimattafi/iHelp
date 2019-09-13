@@ -1,5 +1,6 @@
 package com.tamimattafi.ihelp.app.di.modules.fragments.auth
 
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.confirmation.ConfirmationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login.LoginFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.reset.ResetFragment
@@ -28,6 +29,9 @@ abstract class AuthFragmentsModule {
 
     @ContributesAndroidInjector(modules = [ResetModule::class])
     abstract fun resetFragment() : ResetFragment
+
+    @ContributesAndroidInjector(modules = [ConfirmationModule::class])
+    abstract fun confirmationFragment() : ConfirmationFragment
 
 
     @Module
