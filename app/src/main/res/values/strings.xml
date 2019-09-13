@@ -16,6 +16,15 @@
     <string name="something_went_wrong">Something went wrong! Please try again.</string>
     <string name="create_new_account">Create New Account</string>
     <string name="not_registered_yet">Not registered yet ?</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="send_code">Send code</string>
+    <string name="verify_code">Verify code</string>
+    <string name="code">Code</string>
+
+
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="menu">Menu</string>
