@@ -2,12 +2,15 @@ package com.tamimattafi.ihelp.app.di.modules.fragments.main
 
 import com.tamimattafi.ihelp.app.di.modules.fragments.main.home.OrganizationHomeModule
 import com.tamimattafi.ihelp.app.di.modules.fragments.main.home.VolunteerHomeModule
+import com.tamimattafi.ihelp.app.di.modules.fragments.main.home.search.OrganizationSearchModule
 import com.tamimattafi.ihelp.app.di.modules.fragments.main.profile.OrganizationProfileModule
 import com.tamimattafi.ihelp.app.di.modules.fragments.main.profile.VolunteerProfileModule
 import com.tamimattafi.ihelp.app.di.scopes.main.organization.OrganizationHomeScope
+import com.tamimattafi.ihelp.app.di.scopes.main.organization.OrganizationSearchScope
 import com.tamimattafi.ihelp.app.di.scopes.main.volunteer.VolunteerHomeScope
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.organization.OrganizationHomeFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.search.organization.OrganizationSearchFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.volunteer.VolunteerHomeFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.menu.MenuFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.profile.organization.OrganizationProfileFragment
@@ -24,6 +27,10 @@ abstract class MainFragmentsModule {
     @OrganizationHomeScope
     @ContributesAndroidInjector(modules = [OrganizationHomeModule::class])
     abstract fun organizationHomeFragment() : OrganizationHomeFragment
+
+    @OrganizationSearchScope
+    @ContributesAndroidInjector(modules = [OrganizationSearchModule::class])
+    abstract fun organizationSearchFragment() : OrganizationSearchFragment
 
     @VolunteerHomeScope
     @ContributesAndroidInjector(modules = [VolunteerHomeModule::class])

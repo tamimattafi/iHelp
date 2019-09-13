@@ -1,6 +1,6 @@
 package com.tamimattafi.ihelp.repository.auth.global
 
-import com.tamimattafi.ihelp.interractor.AuthService
+import com.tamimattafi.ihelp.interractor.auth.AuthService
 import com.tamimattafi.ihelp.model.auth.BaseCredentials
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
 import com.tamimattafi.ihelp.model.auth.Token

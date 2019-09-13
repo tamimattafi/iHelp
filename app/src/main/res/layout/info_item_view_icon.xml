@@ -6,7 +6,7 @@
     <TextView
             android:padding="8dp"
             android:textSize="15sp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorGrayDark"
             android:layout_centerVertical="true"
             android:id="@+id/info_item_label"
             android:layout_alignParentStart="true"

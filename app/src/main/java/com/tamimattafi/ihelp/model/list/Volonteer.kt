@@ -1,6 +1,6 @@
-package com.tamimattafi.ihelp.app.model
+package com.tamimattafi.ihelp.model.list
 
-import com.tamimattafi.ihelp.app.model.Contacts
+import com.tamimattafi.ihelp.model.Contacts
 
 data class Volonteer(
     val id: Int,

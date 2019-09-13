@@ -1,13 +1,15 @@
 package com.tamimattafi.ihelp.app.presentation.mvp.presenter
 
-abstract class BasePresenter<V>(protected val view : V) {
+import com.tamimattafi.zennex.app.mvp.BaseContract
+
+abstract class BasePresenter<V>(protected open val view : V) : BaseContract.Presenter {
 
     protected var isViewDestroyed : Boolean = false
 
 
-    open fun onDestroyView() {
+    override fun onDestroyView() {
         isViewDestroyed = true
     }
 
-    open fun onDestroy() {}
+    override fun onDestroy() {}
 }

@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.interractor
+package com.tamimattafi.ihelp.interractor.auth
 
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
 import com.tamimattafi.ihelp.model.auth.RegistrationCredentails

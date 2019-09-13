@@ -42,4 +42,14 @@
     <string name="changing_password">Changing password</string>
     <string name="please_wait">Please wait…</string>
     <string name="passwords_not_match">Passwords don\'t match</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="enter_your_account">Enter Your Account</string>
+    <string name="forgot_password_reset">Forgot Password? <b><u>Reset</u></b></string>
+    <string name="reset_password">Rest Password</string>
+    <string name="no_connection">No Connection</string>
+    <string name="device_not_connected">Your device is not connected to the internet! Please reconnect and try again.</string>
+    <string name="refresh">Refresh</string>
+    <string name="something_went_wrong_internet_connection">Failed to load next data! Please check your internet connection and try again.</string>
+    <string name="try_again">Try Again</string>
+
 </resources>

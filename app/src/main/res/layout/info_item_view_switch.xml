@@ -10,7 +10,7 @@
             android:layout_toStartOf="@id/info_item_switch"
             android:padding="8dp"
             android:textSize="15sp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorGrayDark"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@id/info_item_switch"
             android:layout_height="wrap_content"
