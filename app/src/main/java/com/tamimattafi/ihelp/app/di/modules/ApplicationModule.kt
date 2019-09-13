@@ -5,13 +5,14 @@ import android.content.SharedPreferences
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.Reusable
 import dagger.android.support.DaggerApplication
 import javax.inject.Singleton
 
 @Module
 abstract class ApplicationModule {
 
-    @Singleton @Binds
+    @Reusable @Binds
     abstract fun bindContext(daggerApplication: DaggerApplication) : Context
 
     @Module
