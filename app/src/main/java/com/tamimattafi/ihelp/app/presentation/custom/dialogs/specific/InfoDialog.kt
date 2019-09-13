@@ -6,23 +6,21 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import com.tamimattafi.ihelp.R
-import kotlinx.android.synthetic.main.dialog_confirmation.view.*
+import kotlinx.android.synthetic.main.dialog_info.view.*
 
+class InfoDialog(context: Context?) {
 
-class ConfirmationDialog(context: Context) {
-
-    private val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_confirmation, null)
+    private val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_info, null)
     private val dialog: AlertDialog
-    private var confirmationListener: ConfirmListener? = null
-    private var cancelListener: ConfirmationDialogCancelListener? = null
+    private var cancelListener: CancelListener? = null
 
-    var title: String? = ""
+    var title: String = ""
         set(value) {
             field = value
             dialogView.label.text = value
         }
 
-    var hint: String? = ""
+    var hint: String = ""
         set(value) {
             field = value
             dialogView.hint.text = value
@@ -42,21 +40,12 @@ class ConfirmationDialog(context: Context) {
                 dismiss()
             }
 
-            confirm.setOnClickListener {
-                confirmationListener?.onConfirm()
-                dismiss()
-            }
-
         }
 
     }
 
-    fun setConfirmListener(confirmationListener: ConfirmListener) {
-        this.confirmationListener = confirmationListener
-    }
-
-    fun setCancelListener(confirmationListener: ConfirmListener) {
-        this.confirmationListener = confirmationListener
+    fun setCancelListener(cancelListener: CancelListener) {
+        this.cancelListener = cancelListener
     }
 
     fun show() {
@@ -67,11 +56,8 @@ class ConfirmationDialog(context: Context) {
         dialog.dismiss()
     }
 
-    interface ConfirmListener {
-        fun onConfirm()
-    }
 
-    interface ConfirmationDialogCancelListener {
+    interface CancelListener {
         fun onCancel()
     }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaterialMenuItem">
+        <attr name="label" format="string"/>
+        <attr name="hint" format="string"/>
+        <attr name="hintGravity">
+            <flag name="start" value="8388611"/>
+            <flag name="end" value="8388613"/>
+        </attr>
+        <attr name="infoType">
+            <flag name="icon" value="0"/>
+            <flag name="check" value="1"/>
+            <flag name="text" value="2"/>
+            <flag name="text_icon" value="3"/>
+        </attr>
+        <attr name="iconSize" format="dimension"/>
+        <attr name="setClickable" format="boolean"/>
+        <attr name="setChecked" format="boolean"/>
+        <attr name="hintSelectable" format="boolean"/>
+        <attr name="drawable" format="reference"/>
+        <attr name="autoLinksAll" format="boolean"/>
+    </declare-styleable>
+</resources>

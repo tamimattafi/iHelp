@@ -40,8 +40,8 @@
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight"
                 android:id="@+id/passwordLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
                     android:textSize="14sp"
                     android:textColor="@color/colorGrayDark"

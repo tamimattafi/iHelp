@@ -7,7 +7,7 @@
         android:paddingTop="22dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <com.tamimattafi.zennex.app.ui.custom.views.DialogRecycler
+    <com.tamimattafi.ihelp.app.presentation.custom.views.DialogRecycler
             android:background="@color/colorBackground"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

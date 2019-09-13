@@ -19,4 +19,14 @@
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="menu">Menu</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="filters">Filters</string>
+    <string name="info_item_icon">info</string>
+    <string name="save">Save</string>
+    <string name="description">description</string>
+    <string name="registration_error">Registration Error</string>
+    <string name="creating_user">Creating User</string>
+    <string name="please_wait">Please Wait…</string>
 </resources>

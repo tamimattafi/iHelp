@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tamimattafi.lastochka.app.ui.custom.views.SquareLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <ImageView
+            android:layout_height="78dp"
+            android:layout_width="78dp"
+            android:contentDescription="@string/description"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/icon"/>
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:id="@+id/label"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/icon"/>
+</com.tamimattafi.lastochka.app.ui.custom.views.SquareLinearLayout>
