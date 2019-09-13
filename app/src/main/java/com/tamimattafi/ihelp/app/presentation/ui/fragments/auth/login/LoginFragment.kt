@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class LoginFragment : NavigationContract.NavigationFragment() , LoginContract.View {
 
-    override var fragmentName: String = "fragment-login"
+    override var fragmentName: String = "fragment-authenticate"
     override val layoutId: Int = R.layout.fragment_login
 
     @Inject
