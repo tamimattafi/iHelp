@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "224649399704",
+    "firebase_url": "https://ihelp-34742.firebaseio.com",
+    "project_id": "ihelp-34742",
+    "storage_bucket": "ihelp-34742.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224649399704:android:0f7fd73535ab9c1d5e2fed",
+        "android_client_info": {
+          "package_name": "com.tamimattafi.ihelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224649399704-ctmop8knprlre4f1avu7f9c8pijdo06c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqzlD1IAHFLUUqdv_Frcg1M2l5AIYVvfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224649399704-ctmop8knprlre4f1avu7f9c8pijdo06c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
