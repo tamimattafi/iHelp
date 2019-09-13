@@ -41,9 +41,8 @@
     </style>
 
     <style name="MaterialButtonAccent" parent="MaterialButton">
-        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="backgroundTint">@color/accent_button_disable</item>
     </style>
-
 
     <style name="MaterialButtonRed" parent="MaterialButton">
         <item name="backgroundTint">@color/colorLightRed</item>

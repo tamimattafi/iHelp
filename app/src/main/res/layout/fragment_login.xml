@@ -13,7 +13,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
@@ -64,11 +65,22 @@
             android:text="@string/login"/>
 
         <TextView
+                android:id="@+id/forgotPasswordLabel"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayLight"
+                android:text="@string/forgot_password"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="24dp"
                 android:gravity="center"
                 android:textColor="@color/colorGrayLight"
-                android:text="@string/create_new_account"
+                android:text="@string/not_registered_yet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
