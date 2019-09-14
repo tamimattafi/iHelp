@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        android:background="@color/colorForeground"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:fillViewport="true"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        xmlns:tools="http://schemas.android.com/tools">
+    <include layout="@layout/toolbar_reset"/>
 
     <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
-
-        <TextView
-                android:layout_margin="16dp"
-                android:textSize="24sp"
-                android:gravity="center"
-                android:textColor="@color/colorGrayLight"
-                android:text="@string/reset_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+            android:background="@drawable/background_dialog"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="16dp">
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
@@ -34,6 +25,11 @@
                 android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
                     android:textColor="@color/colorGrayDark"
+                    android:drawableTint="@color/colorGrayLight"
+                    tools:targetApi="m"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="8dp"
+                    android:drawableLeft="@drawable/ic_email"
                     android:id="@+id/username"
                     android:textSize="14sp"
                     android:background="@drawable/background_edit_text_field"
@@ -46,6 +42,8 @@
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
                 android:id="@+id/verify"
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_verified"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -55,4 +53,4 @@
 
 
     </LinearLayout>
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

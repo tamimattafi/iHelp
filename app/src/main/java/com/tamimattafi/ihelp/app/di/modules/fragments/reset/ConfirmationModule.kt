@@ -1,7 +1,7 @@
 package com.tamimattafi.ihelp.app.di.modules.fragments.reset
 
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.confirmation.ConfirmationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.confirmation.ConfirmationContract
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.confirmation.ConfirmationFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.confirmation.ConfirmationPresenter
 import com.tamimattafi.ihelp.model.auth.ConfirmCredentials
 import com.tamimattafi.ihelp.repository.reset.ConfirmationRepository

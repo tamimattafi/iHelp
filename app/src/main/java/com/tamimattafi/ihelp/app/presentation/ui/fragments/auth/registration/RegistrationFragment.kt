@@ -47,6 +47,7 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
                 object : SelectionDialogContract.ListDialogActionListener<String> {
                     override fun onItemSelected(item: String) {
                         type.setText(item)
+                        dismiss()
                     }
                 }
 

@@ -22,16 +22,22 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
     private val confirmationDialog by lazy {
         ConfirmationDialog(appActivity).apply {
             with(appContext.resources) {
-                title = getString(R.string.done)
+                title = getString(R.string.request_sent)
                 hint = getString(R.string.check_your_mail)
             }
+
+            setConfirmListener(object : ConfirmationDialog.ConfirmListener {
+                override fun onConfirm() {
+                    navigationManager.requestBackPress()
+                }
+            })
         }
     }
 
     private val loadingDialog by lazy {
         LoadingDialog(appActivity).apply {
             with(appContext.resources) {
-                title = getString(R.string.changing_password)
+                title = getString(R.string.sending_request)
                 hint = getString(R.string.please_wait)
             }
         }
@@ -39,7 +45,7 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
 
     private val errorDialog by lazy {
         InfoDialog(appActivity).apply {
-            title = appContext.resources.getString(R.string.changing_password_error)
+            title = appContext.resources.getString(R.string.reset_request_failed)
         }
     }
 
@@ -54,7 +60,6 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
 
     override fun onEmailSent() {
         loadingDialog.dismiss()
-        errorDialog.dismiss()
         confirmationDialog.show()
     }
 
@@ -66,7 +71,6 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
     }
 
     override fun showLoading() {
-        errorDialog.dismiss()
         loadingDialog.show()
     }
 }
