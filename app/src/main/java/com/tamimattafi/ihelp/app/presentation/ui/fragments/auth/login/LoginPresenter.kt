@@ -13,6 +13,7 @@ class LoginPresenter @Inject constructor(view: LoginContract.View) : BasePresent
     override fun onLoginBtnPressed() {
         with(view) {
             if (isFormValid()) {
+                setLoading()
                 repository.authenticate(
                     LoginCredentials(
                         getLogin(),

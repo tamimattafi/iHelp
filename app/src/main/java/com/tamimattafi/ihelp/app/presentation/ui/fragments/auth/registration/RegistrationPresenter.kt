@@ -16,6 +16,7 @@ class RegistrationPresenter @Inject constructor(view: RegistrationContract.View)
     override fun onRegisterBtnPressed() {
         with(view) {
             if (isFormValid()) {
+                setLoading()
                 repository.authenticate(
                     RegistrationCredentials(
                         getUsername(),
@@ -23,7 +24,11 @@ class RegistrationPresenter @Inject constructor(view: RegistrationContract.View)
                         getPassword(),
                         getType()
                     )
-                ).setOnSuccessListener { onRegisterSuccess() }.setOnFailureListener { showError(it) }
+                ).setOnSuccessListener {
+                    onRegisterSuccess()
+                }.setOnFailureListener {
+                    showError(it)
+                }
             }
         }
     }

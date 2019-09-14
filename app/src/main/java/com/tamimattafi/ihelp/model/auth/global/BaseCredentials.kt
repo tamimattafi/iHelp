@@ -2,10 +2,10 @@ package com.tamimattafi.ihelp.model.auth.global
 
 import com.tamimattafi.ihelp.model.auth.LoginCredentials
 
-interface BaseCredentials : EmailCredentials {
+interface BaseCredentials : UsernameCredentials {
     val password : String
 
 
     fun toLoginCredentials() : LoginCredentials
-        = LoginCredentials(email, password)
+        = LoginCredentials(username, password)
 }

@@ -20,9 +20,9 @@ interface AuthContract {
         fun isLoggedIn() : Boolean
         fun setLoggedIn(loggedIn : Boolean)
         fun setLoginCredentials(credentials: LoginCredentials?)
-        fun getLoginCredentials() : LoginCredentials
+        fun getLoginCredentials() : LoginCredentials?
         fun setToken(token: Token?)
-        fun getToken() : Token
+        fun getToken() : Token?
     }
 
     abstract class BaseAuthRepository<T : BaseCredentials> : Base<T>() {
@@ -34,6 +34,7 @@ interface AuthContract {
 
         override fun authenticate(credentials: T) : BaseAuthRepository<T> {
             getAuthCall(credentials).enqueue(object : Callback<Token> {
+
                 override fun onFailure(call: Call<Token>, t: Throwable) {
                     onFailure?.invoke(t.localizedMessage ?: t.message ?: t.toString())
                 }

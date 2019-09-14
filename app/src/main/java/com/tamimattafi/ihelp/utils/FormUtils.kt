@@ -2,7 +2,6 @@ package com.tamimattafi.ihelp.utils
 
 import com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
 import com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
-import com.tamimattafi.ihelp.model.auth.LoginCredentials
 
 
 object FormUtils {
@@ -13,10 +12,10 @@ object FormUtils {
         password: FormEditText, passwordLayout: FormInputLayout,
         type : FormEditText, typeLayout : FormInputLayout): Boolean {
         return when {
-            !InputUtils.isLengthEnough(username, usernameLayout, 6) || !InputUtils.isEditTextNoSpecialCharacters(username, usernameLayout) -> {
+            !InputUtils.isLengthEnough(username, usernameLayout, 3) || !InputUtils.isEditTextNoSpecialCharacters(username, usernameLayout) -> {
                 false
             }
-            !isFormCorrect(email.apply { requestFocus() }, emailLayout, password, passwordLayout) || InputUtils.isEditTextEmpty(type, typeLayout) -> {
+            !isEmailFormCorrect(email, emailLayout, password, passwordLayout) || InputUtils.isEditTextEmpty(type, typeLayout) -> {
                 hideError(usernameLayout)
                 false
             }
@@ -27,7 +26,27 @@ object FormUtils {
         }
     }
 
-    fun isFormCorrect(
+    fun isUsernameFormCorrect(
+        username : FormEditText, usernameLayout: FormInputLayout,
+        password: FormEditText, passwordLayout: FormInputLayout
+    ) : Boolean {
+        return when {
+            !InputUtils.isLengthEnough(username, usernameLayout, 3) || !InputUtils.isEditTextNoSpecialCharacters(username, usernameLayout) -> {
+                false
+            }
+            !InputUtils.isLengthEnough(password, passwordLayout, 8) || !InputUtils.isEditTextValidPassword(password, passwordLayout) -> {
+                hideError(usernameLayout)
+                false
+            }
+            else -> {
+                hideError(usernameLayout)
+                hideError(passwordLayout)
+                true
+            }
+        }
+    }
+
+    fun isEmailFormCorrect(
         email: FormEditText, emailLayout: FormInputLayout,
         password: FormEditText, passwordLayout: FormInputLayout
     ): Boolean {
@@ -50,9 +69,8 @@ object FormUtils {
 
     private fun hideError(inputLayout: FormInputLayout) {
         inputLayout.apply {
-            requestFocus()
-            isErrorEnabled = false
             error = null
+            isErrorEnabled = false
         }
     }
 

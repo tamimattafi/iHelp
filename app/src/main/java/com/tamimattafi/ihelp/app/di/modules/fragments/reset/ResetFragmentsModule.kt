@@ -18,13 +18,5 @@ abstract class ResetFragmentsModule {
     @ContributesAndroidInjector(modules = [ConfirmationModule::class])
     abstract fun confirmationFragment() : ConfirmationFragment
 
-    @Module
-    companion object {
-        @JvmStatic
-        @Provides
-        @Reusable
-        fun provideResetService(retrofit: Retrofit) : ResetService = retrofit.create(
-            ResetService::class.java)
-    }
 
 }

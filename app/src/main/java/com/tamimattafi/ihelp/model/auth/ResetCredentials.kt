@@ -1,7 +1,7 @@
 package com.tamimattafi.ihelp.model.auth
 
-import com.tamimattafi.ihelp.model.auth.global.EmailCredentials
+import com.tamimattafi.ihelp.model.auth.global.UsernameCredentials
 
 data class ResetCredentials(
-    override val email: String
-) : EmailCredentials
+    override val username: String
+) : UsernameCredentials

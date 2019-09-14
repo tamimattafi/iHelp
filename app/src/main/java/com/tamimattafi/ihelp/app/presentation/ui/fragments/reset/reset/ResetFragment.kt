@@ -21,9 +21,9 @@ class ResetFragment : NavigationContract.NavigationFragment() , ResetContract.Vi
             presenter.onVerifyBtnPressed()
         }
     }
-    override fun isEmailValid() = InputUtils.isEditTextAnEmail(email, emailLayout)
+    override fun isEmailValid() = InputUtils.isEditTextAnEmail(username, usernameLayout)
 
-    override fun getEmail() = email.text.toString()
+    override fun getEmail() = username.text.toString()
 
     override fun onEmailSent() {
 

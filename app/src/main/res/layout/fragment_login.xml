@@ -31,18 +31,18 @@
                 style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/emailLayout"
+                android:id="@+id/usernameLayout"
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
                     android:textColor="@color/colorGrayDark"
-                    android:id="@+id/email"
+                    android:id="@+id/username"
                     android:textSize="14sp"
                     android:background="@drawable/background_edit_text_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="@string/email" />
+                    android:hint="@string/username" />
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout

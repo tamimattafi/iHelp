@@ -8,6 +8,7 @@ import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.InfoDialog
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.LoadingDialog
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration.RegistrationFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainFragment
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.reset.reset.ResetFragment
 import com.tamimattafi.ihelp.utils.FormUtils
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -36,14 +37,15 @@ class LoginFragment : NavigationContract.NavigationFragment() , LoginContract.Vi
         }
     }
 
-    override fun getLogin() = email.text.toString()
+    override fun getLogin() = username.text.toString()
 
     override fun getPassword() = password.text.toString()
 
-    override fun isFormValid(): Boolean = FormUtils.isFormCorrect(email, emailLayout, password, passwordLayout)
+    override fun isFormValid(): Boolean = FormUtils.isUsernameFormCorrect(username, usernameLayout, password, passwordLayout)
 
     override fun onLoginSuccess() {
         loadingDialog.dismiss()
+        navigationManager.requestAttachBaseScreen(MainFragment())
     }
 
     override fun setLoading() {

@@ -25,13 +25,4 @@ abstract class AuthFragmentsModule {
     @ContributesAndroidInjector(modules = [WelcomeModule::class])
     abstract fun welcomeFragment() : WelcomeFragment
 
-    @Module
-    companion object {
-        @JvmStatic
-        @Provides
-        @Reusable
-        fun provideAuthService(retrofit: Retrofit) : AuthService = retrofit.create(
-            AuthService::class.java)
-    }
-
 }

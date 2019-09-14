@@ -49,10 +49,13 @@ object InputUtils {
 
 
     fun isEditTextNoSpecialCharacters(editText: FormEditText, inputLayout: FormInputLayout) : Boolean {
-        return Pattern.compile("[a-zA-Z0-9]*").matcher(editText.text.toString()).matches().also {
-            if (!it) {
-                editText.requestFocus()
-                inputLayout.error = editText.context.resources.getString(R.string.username_invalid)
+        with(editText.text.toString()) {
+            return Pattern.compile("[a-zA-Z0-9_]*").matcher(this).matches().let { matches ->
+                if (!matches || Character.isDigit(this[0])) {
+                    editText.requestFocus()
+                    inputLayout.error = editText.context.resources.getString(R.string.username_invalid)
+                    false
+                } else true
             }
         }
     }

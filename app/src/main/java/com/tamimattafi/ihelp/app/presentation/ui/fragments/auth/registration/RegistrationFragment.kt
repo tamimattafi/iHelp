@@ -2,16 +2,15 @@ package com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.registration
 
 
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import com.tamimattafi.ihelp.R
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.base.SelectionDialogContract
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.InfoDialog
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.specific.LoadingDialog
 import com.tamimattafi.ihelp.app.presentation.custom.dialogs.sub.StringSelectionDialog
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
-import com.tamimattafi.ihelp.utils.AppUtils
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainFragment
 import com.tamimattafi.ihelp.utils.FormUtils
 import kotlinx.android.synthetic.main.fragment_registration.*
 import javax.inject.Inject
@@ -65,6 +64,7 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
 
     override fun onRegisterSuccess() {
         loadingDialog.dismiss()
+        navigationManager.requestAttachBaseScreen(MainFragment())
     }
 
     override fun setLoading() {
@@ -73,12 +73,14 @@ class RegistrationFragment : NavigationContract.NavigationFragment() , Registrat
 
     override fun showError(message: String) {
         loadingDialog.dismiss()
+        Log.i("RegistrationError", message)
         errorDialog.apply {
             hint = message
         }.show()
     }
 
-    override fun isFormValid() = FormUtils.isFormCorrect(username, usernameLayout,
+    override fun isFormValid() = FormUtils.isFormCorrect(
+        username, usernameLayout,
         email, emailLayout,
         password, passwordLayout,
         type, typeLayout)
