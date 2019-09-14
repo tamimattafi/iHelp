@@ -10,5 +10,6 @@ interface ResetContract {
         fun isEmailValid(): Boolean
         fun onEmailSent()
         fun showError(message : String)
+        fun showLoading()
     }
 }
