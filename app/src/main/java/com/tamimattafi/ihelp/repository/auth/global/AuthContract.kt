@@ -30,6 +30,7 @@ interface AuthContract {
         @Inject
         protected lateinit var interractor : AuthService
 
+
         protected abstract fun getAuthCall(credentials : T) : Call<Token>
 
         override fun authenticate(credentials: T) : BaseAuthRepository<T> {
@@ -40,12 +41,17 @@ interface AuthContract {
                 }
 
                 override fun onResponse(call: Call<Token>, response: Response<Token>) {
-                    response.body()?.let {
-                        with(preferences) {
+                    response.body()?.let { token ->
+                        with(authPreferences) {
                             setLoggedIn(true)
                             setLoginCredentials(credentials.toLoginCredentials())
-                            setToken(it)
+                            setToken(token)
                         }
+
+                        token.volunteer?.let {
+                            mainPreferences.setVolunteer(it)
+                        } ?: saveRegistrationRepository(credentials)
+
                         onSuccess?.invoke()
                     } ?: onFailure?.invoke(response.errorBody()?.string() ?: "Token is null")
                 }
@@ -54,6 +60,8 @@ interface AuthContract {
 
             return this
         }
+
+        protected open fun saveRegistrationRepository(credentials: T) {}
     }
 
 }

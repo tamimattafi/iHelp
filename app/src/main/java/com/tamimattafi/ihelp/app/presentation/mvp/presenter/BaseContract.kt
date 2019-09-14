@@ -1,4 +1,4 @@
-package com.tamimattafi.zennex.app.mvp
+package com.tamimattafi.ihelp.app.presentation.mvp.presenter
 
 interface BaseContract {
 

@@ -16,8 +16,6 @@ abstract class MainModule {
     @Binds
     abstract fun bindManager(mainManager: MainManager) : MainContract.Manager
 
-    @Binds
-    abstract fun bindPreferences(mainPreferences: MainPreferences) : MainContract.Preferences
 
     @Module
     companion object {

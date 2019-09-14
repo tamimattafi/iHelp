@@ -1,4 +1,4 @@
-package com.tamimattafi.ihelp.repository.api.global
+package com.tamimattafi.ihelp.repository.list.global
 
 import retrofit2.Call
 import com.tamimattafi.ihelp.interractor.list.ListService
@@ -10,7 +10,6 @@ import javax.inject.Inject
 interface RepositoryContract {
 
     interface Base<T> {
-        var paginationSize: Int
         var currentCount: Int
         fun refresh()
         fun getNextPage() : Base<T>
@@ -41,9 +40,7 @@ interface RepositoryContract {
                 override fun onResponse(call: Call<ListPage<T>>, response: Response<ListPage<T>>) {
                     response.body()?.let {
                         onListComplete?.invoke(it.list)
-                    } ?: response.errorBody()?.let {
-                        onFailure?.invoke(it.string() ?: "Something went wrong")
-                    }
+                    } ?: response.errorBody()?.let { onFailure?.invoke(it.string() ?: "Something went wrong") }
                 }
 
             })
@@ -56,6 +53,10 @@ interface RepositoryContract {
         override fun destroy() {
             stopListening()
             currentCount = 0
+        }
+
+        override fun refresh() {
+            destroy()
         }
 
         fun setOnListCompleteListener(listener : (it: List<T>) -> Unit) : RepositoryBase<T> {

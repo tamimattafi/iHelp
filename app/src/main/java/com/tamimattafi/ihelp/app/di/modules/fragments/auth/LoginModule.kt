@@ -15,7 +15,6 @@ abstract class LoginModule {
     @Binds
     abstract fun bindPresenter(loginPresenter: LoginPresenter) : LoginContract.Presenter
 
-
     @Binds
     abstract fun bindView(loginFragment: LoginFragment) : LoginContract.View
 

@@ -12,7 +12,6 @@ abstract class WelcomeModule {
     @Binds
     abstract fun bindPresenter(welcomePresenter : WelcomePresenter) : WelcomeContract.Presenter
 
-
     @Binds
     abstract fun bindView(welcomeFragment: WelcomeFragment) : WelcomeContract.View
 }

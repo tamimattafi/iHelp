@@ -9,6 +9,6 @@ import javax.inject.Inject
 class ConfirmationRepository @Inject constructor(): ResetRepositoryContract.BaseResetRepository<ConfirmCredentials>() {
 
     override fun getResetCall(resetCredentials: ConfirmCredentials): Call<ResponseBody>
-            = interractor.confirmReset(resetCredentials.apply { token = preferences.getToken()?.key ?: return@apply })
+            = interractor.confirmReset(resetCredentials.apply { token = authPreferences.getToken()?.key ?: return@apply })
 
 }

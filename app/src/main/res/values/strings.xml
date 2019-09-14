@@ -54,8 +54,12 @@
     <string name="verify">Verify</string>
     <string name="check_your_mail">Please check your email for instructions</string>
     <string name="reset_request_failed">Reset Request Failed</string>
-    <string name="sending_request">Sending Request...</string>
+    <string name="sending_request">Sending Request…</string>
     <string name="request_sent">Request Sent</string>
+    <string name="image">image</string>
+    <string name="profession_type">Profession Type</string>
+    <string name="volunteers">Volunteers</string>
+    <string name="vacancies">vacancies</string>
 
 
 </resources>

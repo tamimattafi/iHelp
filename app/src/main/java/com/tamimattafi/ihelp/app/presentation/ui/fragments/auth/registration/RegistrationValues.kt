@@ -8,9 +8,9 @@ object RegistrationValues {
 
     fun getTypeList(context: Context) : ArrayList<String>
             = TYPE_LIST ?: ArrayList<String>().apply {
-        add(context.resources.getString(R.string.volunteer))
-        add(context.resources.getString(R.string.organization))
-    }.also { TYPE_LIST = it }
+                add(context.resources.getString(R.string.volunteer))
+                add(context.resources.getString(R.string.organization))
+            }.also { TYPE_LIST = it }
 
     fun getType(context: Context, name: String) : Boolean
             = name != getTypeList(context)[0]

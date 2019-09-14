@@ -6,6 +6,8 @@ import com.tamimattafi.ihelp.app.di.modules.fragments.auth.AuthFragmentsModule
 import com.tamimattafi.ihelp.app.di.modules.fragments.main.MainFragmentsModule
 import com.tamimattafi.ihelp.app.di.modules.fragments.reset.ResetFragmentsModule
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainContract
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.MainPreferences
 import com.tamimattafi.ihelp.repository.auth.global.AuthContract
 import com.tamimattafi.ihelp.repository.auth.global.AuthPreferences
 import dagger.Binds
@@ -31,5 +33,8 @@ abstract class ActivityModule {
 
     @Binds @Reusable
     abstract fun bindAuthPreferences(authPreferences: AuthPreferences) : AuthContract.Preferences
+
+    @Binds
+    abstract fun bindMainPreferences(mainPreferences: MainPreferences) : MainContract.Preferences
 
 }

@@ -63,6 +63,11 @@ dependencies {
     def retrofit_version = "2.6.1"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    //CircularImageView
+    implementation 'com.mikhaellopez:circularimageview:4.0.2'
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

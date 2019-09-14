@@ -13,4 +13,6 @@ object ApiPaths {
     const val REGISTRATION = "$REST_AUTH/registration/"
     const val VERIFY_EMAIL = "$REGISTRATION/verify-username/"
 
+    const val VACANCIES = "$REST_AUTH/vacancies/"
+
 }

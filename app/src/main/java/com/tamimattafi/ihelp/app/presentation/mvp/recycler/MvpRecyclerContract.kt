@@ -1,7 +1,8 @@
 package com.tamimattafi.ihelp.app.presentation.mvp.recycler
 
 import androidx.recyclerview.widget.RecyclerView
-import com.tamimattafi.zennex.app.mvp.BaseContract
+import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BaseContract
+import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BasePresenter
 
 
 interface MvpRecyclerContract {
@@ -59,9 +60,6 @@ interface MvpRecyclerContract {
     interface View<HOLDER : Holder> : Listener {
         fun showError(message : String)
         fun getAdapter() : MvpRecyclerContract.RecyclerAdapter<HOLDER>
-    }
-
-    interface RefreshableView<HOLDER : Holder> : View<HOLDER> {
         fun setRefreshing(refreshing: Boolean)
     }
 }

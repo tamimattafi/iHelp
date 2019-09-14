@@ -10,6 +10,7 @@ import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
 import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global.BaseHomeContract
 import com.tamimattafi.ihelp.utils.AppUtils
 import kotlinx.android.synthetic.main.fragment_recycler.*
+import kotlinx.android.synthetic.main.fragment_recycler_refresher.*
 import kotlinx.android.synthetic.main.toolbar_home.*
 import javax.inject.Inject
 
@@ -58,6 +59,10 @@ abstract class MvpRecyclerFragment<
 
     override fun getAdapter(): MvpRecyclerContract.RecyclerAdapter<HOLDER> = adapter
 
+    override fun setRefreshing(refreshing: Boolean) {
+        refresher.isRefreshing = refreshing
+        recycler.visibility = if (refreshing) View.INVISIBLE else View.VISIBLE
+    }
 
 
 

@@ -1,5 +1,6 @@
 package com.tamimattafi.ihelp.model.list
 
+import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerContract
 import com.tamimattafi.ihelp.model.Contacts
 
 
@@ -13,4 +14,8 @@ data class Organisation(
     val country: String = "",
     val city: String = "",
     val address: String = ""
-)
+) : MvpRecyclerContract.Object<Int> {
+
+    override fun getObjectId(): Int = id
+
+}

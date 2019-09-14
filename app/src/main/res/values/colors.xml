@@ -17,4 +17,6 @@
     <color name="colorBlueGray">#57777C</color>
     <color name="colorDarkRed">#4D1D2F</color>
     <color name="colorLightRed">#BA2540</color>
+    <color name="colorActive">#1EEE1E</color>
+    <color name="colorNotActive">#EE1E1E</color>
 </resources>

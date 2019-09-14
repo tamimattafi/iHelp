@@ -3,6 +3,8 @@ package com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global
 import android.os.Bundle
 import android.view.View
 import com.tamimattafi.ihelp.R
+import com.tamimattafi.ihelp.app.presentation.custom.holders.Actions
+import com.tamimattafi.ihelp.app.presentation.mvp.fragment.MvpRecyclerFragment
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerContract
 import com.tamimattafi.ihelp.app.presentation.mvp.recycler.MvpRecyclerController
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
@@ -15,42 +17,20 @@ abstract class BaseHomeFragment<
         HOLDER : MvpRecyclerContract.Holder,
         PRESENTER : BaseHomeContract.Presenter<HOLDER>,
         ADAPTER : BaseHomeContract.Adapter<HOLDER>
-        > : NavigationContract.NavigationFragment(), BaseHomeContract.View {
+        > : MvpRecyclerFragment<HOLDER, PRESENTER, ADAPTER>(), BaseHomeContract.View<HOLDER> {
 
     override val layoutId: Int = R.layout.fragment_home
-
-    @Inject
-    lateinit var presenter : PRESENTER
-
-    @Inject
-    lateinit var adapter : ADAPTER
-
     abstract fun getTitle() : String
+
     abstract fun getSearchFragment() : NavigationContract.NavigationFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter.controller = MvpRecyclerController(recycler)
+        title.text = getTitle()
         search.setOnClickListener {
             navigationManager.requestSlideRightScreen(getSearchFragment())
         }
     }
-
-
-    override fun onDestroyView() {
-        presenter.onDestroyView()
-        super.onDestroyView()
-    }
-
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
-    }
-
-    override fun showError(message: String) {
-        AppUtils.showToast(appContext, message)
-    }
-
 
 
 

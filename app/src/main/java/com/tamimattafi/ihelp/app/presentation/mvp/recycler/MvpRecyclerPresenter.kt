@@ -1,10 +1,10 @@
 package com.tamimattafi.ihelp.app.presentation.mvp.recycler
 
 import com.tamimattafi.ihelp.app.presentation.mvp.presenter.BasePresenter
-import com.tamimattafi.ihelp.repository.api.global.RepositoryContract
+import com.tamimattafi.ihelp.repository.list.global.RepositoryContract
 
 abstract class MvpRecyclerPresenter<T : MvpRecyclerContract.Object<Int>,
-        VIEW : MvpRecyclerContract.RefreshableView<HOLDER>,
+        VIEW : MvpRecyclerContract.View<HOLDER>,
         HOLDER : MvpRecyclerContract.Holder>(
     override var view: VIEW,
     protected val repository: RepositoryContract.RepositoryBase<T>
@@ -20,7 +20,7 @@ abstract class MvpRecyclerPresenter<T : MvpRecyclerContract.Object<Int>,
                     isLoading = true
                     dataList.addAll(ArrayList(it))
                     setDataCount(dataList.size)
-                    allData = it.size < repository.paginationSize
+                    allData = true
                     isLoading = false
                     view.setRefreshing(false)
                 }.setOnFailureListener {

@@ -2,17 +2,26 @@ package com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.volunteer
 
 import com.tamimattafi.ihelp.R
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.organization.OrganizationHomeContract
-import javax.inject.Inject
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.global.BaseHomeFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.search.volunteer.VolunteerSearchFragment
 
-class VolunteerHomeFragment : NavigationContract.NavigationFragment() ,
-    VolunteerHomeContract.View {
+class VolunteerHomeFragment : BaseHomeFragment<VolunteerHomeContract.Holder, VolunteerHomeContract.Presenter, VolunteerHomeContract.Adapter>(), VolunteerHomeContract.View {
 
-    override var fragmentName: String = "fragment-home-volunteer"
-    override val layoutId: Int = R.layout.fragment_home_volunteer
+    override fun getTitle(): String = appContext.getString(R.string.volunteers)
+    override var fragmentName: String = "fragment-home-volunteers"
 
-    @Inject
-    lateinit var presenter : VolunteerHomeContract.Presenter
+    override fun getSearchFragment(): NavigationContract.NavigationFragment
+            = VolunteerSearchFragment()
+
+
+    override fun onHolderClick(listPosition: Int, adapterPosition: Int, itemId: Int?) {
+
+    }
+
+    override fun onHolderLongClick(listPosition: Int, adapterPosition: Int, itemId: Int?) {
+
+    }
+
 
 
 }

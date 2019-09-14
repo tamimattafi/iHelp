@@ -11,4 +11,8 @@ class RegistrationRepository @Inject constructor() : AuthContract.BaseAuthReposi
     override fun getAuthCall(credentials: RegistrationCredentials): Call<Token>
             = interractor.register(credentials)
 
+    override fun saveRegistrationRepository(credentials: RegistrationCredentials) {
+        mainPreferences.setVolunteer(!credentials.type)
+    }
+
 }

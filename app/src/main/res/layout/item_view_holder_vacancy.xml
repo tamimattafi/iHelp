@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/background_dialog"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!--
+    val id: Int,
+    val dateRange: String,
+    val eventName: String,
+    val name: String,
+    val description: String,
+    val professionType: Boolean,
+    val organizationCategory: String
+    -->
+
+
+    <LinearLayout
+            android:id="@+id/data"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:paddingStart="8dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/colorGrayDark"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                tools:ignore="RtlSymmetry" />
+        <TextView
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingStart="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/colorGrayLight"
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                tools:ignore="RtlSymmetry" />
+        <View android:layout_marginTop="16dp" android:layout_marginBottom="16dp" style="@style/HorizontalDivider"/>
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.MaterialMenuItem
+            app:label="@string/profession_type"
+            android:id="@+id/profession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.tamimattafi.ihelp.app.presentation.custom.views.MaterialMenuItem
+                android:id="@+id/organization"
+                app:label="@string/organization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/data"
+            android:paddingStart="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorGrayLight"
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_alignParentRight="true" />
+</RelativeLayout>
