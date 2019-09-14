@@ -13,6 +13,7 @@ class ResetPresenter @Inject constructor(view : ResetContract.View) : BasePresen
     override fun onVerifyBtnPressed() {
         with(view) {
             if (isEmailValid()) {
+                showLoading()
                 repository.reset(
                     ResetCredentials(
                         getEmail()

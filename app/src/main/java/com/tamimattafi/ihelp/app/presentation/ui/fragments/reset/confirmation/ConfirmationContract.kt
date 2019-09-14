@@ -11,5 +11,6 @@ interface ConfirmationContract {
         fun getSecondPassword() : String
         fun onConfirmSuccess()
         fun showError(message : String)
+        fun showLoading()
     }
 }

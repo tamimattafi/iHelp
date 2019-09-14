@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
-        android:background="@color/colorForeground"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:fillViewport="true"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+>
+    <include layout="@layout/toolbar_registration"/>
 
-    <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:background="@color/colorForeground"
+            android:fillViewport="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="56dp"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
+            android:layout_height="match_parent"
     >
+    <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <TextView
                 android:layout_margin="16dp"
@@ -35,9 +39,6 @@
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:drawableStart="@drawable/ic_profile"
-                    android:drawableTint="@color/colorGrayLight"
-                    android:drawablePadding="8dp"
                     android:textColor="@color/colorGrayDark"
                     android:id="@+id/username"
                     android:textSize="14sp"
@@ -45,9 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="@string/username"
-                    android:drawableLeft="@drawable/ic_profile"
-                    tools:targetApi="m" />
+                    android:hint="@string/username" />
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
@@ -58,9 +57,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/emailLayout">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:drawableStart="@drawable/ic_email"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorGrayLight"
                     android:textSize="14sp"
                     android:textColor="@color/colorGrayDark"
                     android:background="@drawable/background_edit_text_field"
@@ -68,9 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="@string/email"
-                    android:drawableLeft="@drawable/ic_email"
-                    tools:targetApi="m" />
+                    android:hint="@string/email" />
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
 
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
@@ -83,9 +77,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:drawableStart="@drawable/ic_password"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorGrayLight"
                     android:textSize="14sp"
                     android:textColor="@color/colorGrayDark"
                     android:background="@drawable/background_edit_text_field"
@@ -93,33 +84,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:hint="@string/password"
-                    android:drawableLeft="@drawable/ic_password"
-                    tools:targetApi="m" />
+                    android:hint="@string/password"/>
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
         <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
                 style="@style/Widget.Design.TextInputLayout"
                 app:hintTextColor="@color/colorGrayDark"
                 android:textColorHint="@color/colorGrayLight"
+                app:passwordToggleTint="@color/colorGrayLight"
+                app:passwordToggleEnabled="true"
+                android:id="@+id/typeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/typeLayout">
+                android:layout_height="wrap_content">
             <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
-                    android:drawableStart="@drawable/ic_account_type"
-                    android:focusableInTouchMode="false"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorGrayLight"
                     android:textSize="14sp"
                     android:textColor="@color/colorGrayDark"
                     android:background="@drawable/background_edit_text_field"
                     android:id="@+id/type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/account_type"
-                    android:drawableLeft="@drawable/ic_email"
-                    tools:targetApi="m" />
+                    android:hint="@string/account_type"/>
         </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
         <com.google.android.material.button.MaterialButton
                 style="@style/MaterialButtonAccent"
                 android:id="@+id/registerBtn"
@@ -130,4 +116,5 @@
                 android:padding="16dp"
                 android:text="@string/register"/>
     </LinearLayout>
-</ScrollView>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

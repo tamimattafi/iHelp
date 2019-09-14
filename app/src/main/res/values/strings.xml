@@ -52,5 +52,7 @@
     <string name="volunteer">Volunteer</string>
     <string name="organization">Organization</string>
     <string name="verify">Verify</string>
+    <string name="check_your_mail">Please check your email for instructions</string>
+
 
 </resources>
