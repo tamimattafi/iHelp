@@ -1,5 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:fillViewport="true"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
-</RelativeLayout>
+    <LinearLayout
+            android:background="@drawable/background_dialog"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+        <TextView
+        android:layout_margin="16dp"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:textColor="@color/colorGrayLight"
+        android:text="@string/volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <ImageView
+                android:layout_weight="1"
+                android:contentDescription="@string/description"
+                android:scaleType="fitCenter"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true"
+                android:id="@+id/image_item_imageView"
+                android:src="@drawable/human"/>
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/usernameLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
+            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
+                    android:drawableTint="@color/colorGrayLight"
+                    tools:targetApi="m"
+                    android:drawableStart="@drawable/ic_profile"
+                    android:drawablePadding="8dp"
+                    android:drawableLeft="@drawable/ic_profile"
+                    android:id="@+id/username"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/full_name"
+            />
+        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
+        <!--<com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout-->
+                <!--style="@style/Widget.Design.TextInputLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/photoLayout"-->
+                <!--app:hintTextColor="@color/colorGrayDark"-->
+                <!--android:textColorHint="@color/colorGrayLight">-->
+            <!--<com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText-->
+                    <!--android:textColor="@color/colorGrayDark"-->
+                    <!--android:drawableTint="@color/colorGrayLight"-->
+                    <!--tools:targetApi="m"-->
+                    <!--android:drawableStart="@drawable/ic_camera"-->
+                    <!--android:drawablePadding="8dp"-->
+                    <!--android:drawableLeft="@drawable/ic_profile"-->
+                    <!--android:id="@+id/photo"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:background="@drawable/background_edit_text_field"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:hint="@string/photo"-->
+            <!--/>-->
+        <!--</com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>-->
+
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/specializationLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
+            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
+                    android:drawableTint="@color/colorGrayLight"
+                    tools:targetApi="m"
+                    android:drawableStart="@drawable/ic_group"
+                    android:drawablePadding="8dp"
+                    android:drawableLeft="@drawable/ic_group"
+                    android:id="@+id/specialization"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/specialization"
+            />
+        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
+            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
+                    android:drawableTint="@color/colorGrayLight"
+                    tools:targetApi="m"
+
+                    android:gravity="start"
+                    android:id="@+id/info"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/info"
+            />
+        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
+        <com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactsLayout"
+                app:hintTextColor="@color/colorGrayDark"
+                android:textColorHint="@color/colorGrayLight">
+            <com.tamimattafi.ihelp.app.presentation.custom.views.FormEditText
+                    android:textColor="@color/colorGrayDark"
+                    android:drawableTint="@color/colorGrayLight"
+                    tools:targetApi="m"
+                    android:gravity="start"
+                    android:minHeight="150dp"
+                    android:id="@+id/contacts"
+                    android:textSize="14sp"
+                    android:background="@drawable/background_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/contacts"
+            />
+        </com.tamimattafi.ihelp.app.presentation.custom.views.FormInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonAccent"
+                android:id="@+id/about"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="16dp"
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_check"
+                android:text="@string/register"/>
+
+
+    </LinearLayout>
+</ScrollView>

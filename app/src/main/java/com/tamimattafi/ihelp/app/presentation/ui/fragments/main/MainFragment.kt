@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.tamimattafi.ihelp.R
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationContract
-import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
 class MainFragment : NavigationContract.NavigationFragment() {
