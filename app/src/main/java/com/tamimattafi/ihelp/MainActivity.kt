@@ -2,7 +2,7 @@ package com.tamimattafi.ihelp
 
 import android.os.Bundle
 import com.tamimattafi.ihelp.app.presentation.navigation.NavigationActivity
-import com.tamimattafi.ihelp.app.presentation.ui.fragments.auth.login.LoginFragment
+import com.tamimattafi.ihelp.app.presentation.ui.fragments.main.home.volunteer.VolunteerHomeFragment
 import javax.inject.Inject
 
 class MainActivity : NavigationActivity() {
@@ -14,7 +14,7 @@ class MainActivity : NavigationActivity() {
     lateinit var launcher: Launcher
 
     override fun onViewCreated(savedInstanceState: Bundle?) {
-        requestAttachBaseScreen(launcher.getBaseFragment())
+        requestAttachBaseScreen(VolunteerHomeFragment())
     }
 
     override fun beforeViewCreated() {

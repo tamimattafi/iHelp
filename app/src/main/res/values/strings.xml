@@ -56,6 +56,15 @@
     <string name="reset_request_failed">Reset Request Failed</string>
     <string name="sending_request">Sending Request...</string>
     <string name="request_sent">Request Sent</string>
+    <string name="full_name">Full name</string>
+    <string name="specialization">Specialization</string>
+    <string name="info">Tell something about you </string>
+    <string name="contacts">Contacts</string>
+    <string name="photo">Photo</string>
+    <string name="location">Location</string>
+    <string name="events">Events</string>
+
+
 
 
 </resources>

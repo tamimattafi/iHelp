@@ -2,7 +2,7 @@ package com.tamimattafi.ihelp.model.list
 
 import com.tamimattafi.ihelp.model.Contacts
 
-data class Volonteer(
+data class Volunteer(
     val id: Int,
     val name: String,
     val contacts: Contacts,
